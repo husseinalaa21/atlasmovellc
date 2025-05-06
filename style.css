@@ -39,6 +39,7 @@ img.bar_top {
 }
 
 .login_but {
+    width: 60px;
     padding: 10px 14px 10px 14px !important;
     background-color: #007bff !important;
     border: 1px solid #459cf8;
@@ -46,7 +47,6 @@ img.bar_top {
     color: #e6f0ff;
     border-radius: 30px;
     margin-left: 10px;
-
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;

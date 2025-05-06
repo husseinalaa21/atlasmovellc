@@ -57,21 +57,29 @@ img.bar_top {
     overflow: hidden;
 }
 
-/* Main scroll container */
 .pro {
     flex: 0 0 100%;
     position: relative;
-    background-image: url('./atlasmovellc_2.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center bottom;
-    /* Bottom alignment */
     text-align: center;
     color: #fff;
     font-family: Arial, sans-serif;
     padding: 20px 20px;
     box-sizing: border-box;
     min-height: 400px;
+    overflow: hidden;
+}
+
+.pro .bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 0;
 }
 
 .pro::before {
@@ -81,9 +89,10 @@ img.bar_top {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.4); /* Overlay for contrast */
     z-index: 1;
 }
+
 
 .pro_x {
     position: relative;

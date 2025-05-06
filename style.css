@@ -191,8 +191,8 @@ img.bar_top {
 .dashboard::before {
     content: '';
     position: absolute;
-    top: -60px;
-    right: -60px;
+    top: -80px;
+    right: -80px;
     width: 200px;
     height: 200px;
     border-radius: 50%;
@@ -276,14 +276,16 @@ select {
 }
 
 .search-bar button {
+    position: relative;
     padding: 10px;
     border-radius: 500px;
     border: 0;
     cursor: pointer;
     align-items: center;
-    width: 45px;
-    height: 45px;
+    min-width: 55px;
+    min-height: 55px;
     background-color: #459cf8;
+    margin: auto;
     margin-left: 10px;
     position: relative;
     top: 10px;
@@ -291,6 +293,12 @@ select {
 
 .radio_ {
     min-width: 140px;
+    width: 80%;
+}
+
+.s_ div {
+    width: 80%;
+    margin: auto;
 }
 
 img.seach_bar {
@@ -328,7 +336,7 @@ img.seach_bar {
     .search-bar form , .c_{
         display: block;
     }
-    .c_ p{
+    .s_ p{
         text-align: center !important;
         margin: auto !important;
         left: auto !important;

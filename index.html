@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="./icon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Atlas Move LLC - Transportation - Van, Sprinter loads</title>
+
+    <!-- CALENDER LINKS STYLE BY HUSSEIN -->
+    <!-- Flatpickr CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+    <!-- Flatpickr Theme (to customize colors later) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/material_blue.css">
+
+    <!-- Flatpickr JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+</head>
+
+<body>
+    <div class="pro">
+        <div class="pro_x">
+            <div class="header">
+                <div class="logo">
+                    <img src="./logo.png" alt="Main Logo" width="62px">
+                </div>
+                <div class="tools">
+                    <div class="login_but"> LOGIN </div>
+                    <div><img src="bars-solid.svg" class="bar_top" alt="" width="23px"></div>
+                </div>
+            </div>
+            <div class="front-wrapper">
+                <div class="front">
+                    <!-- Section A -->
+                    <div class="a">
+                        <div class="informations">
+                            <h3>ATLAS MOVE LLC</h3>
+                            <h2> Smart Logistics, Reliable Results </h2>
+                            <p>Atlas Move LLC is your trusted logistics partner for last-mile delivery solutions. We
+                                specialize
+                                in
+                                cargo van transportation, offering fast, safe, and on-time delivery services for
+                                businesses
+                                and
+                                individuals.</p>
+                        </div>
+                        <div class="options">
+                            <div class="blue">REGISTER</div>
+                            <div class="white">LEARN MORE</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="middle">
+        <div class="dashboard">
+            <div class="dash_info">
+                <h2> Find a load based on your location </h2>
+                <div class="search-bar">
+                    <form id="search-form">
+                        <div class="s_ c_">
+                            <div>
+                                <p> Pick Up Address </p>
+                                <input type="text" placeholder="Select your location" name="location" required>
+                            </div>
+                            <div>
+                                <p> Pick Up Date</p>
+                                <input type="text" id="pickupDate" name="pickupDate" placeholder="Pick Up Date"
+                                    required>
+                            </div>
+                        </div>
+                        <div class="s_">
+                            <div>
+                                <p>Select Radius</p>
+                                <select name="radius" class="radio_" required>
+                                    <option value="50">50 miles</option>
+                                    <option value="100">100 miles</option>
+                                    <option value="200">200 miles</option>
+                                </select>
+                            </div>
+                            <button type="submit">
+                                <img src="./magnifying-glass-solid.svg" class="seach_bar" width="20px" alt="">
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Loads will be inserted here by JavaScript -->
+            <div id="load-container">
+                <div class="load_title">
+                    <div> Pick Up </div>
+                    <div> Drop Off </div>
+                    <div> information </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="end">
+
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>

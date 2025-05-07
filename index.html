@@ -26,11 +26,24 @@
 </head>
 
 <body>
+    <div class="top-offer-banner" id="offerBanner">
+        <div class="offer_tap_lap">
+            <div class="close_tap" onclick="document.getElementById('offerBanner').style.display='none'"><img src="./xmark-solid.svg" class="bar_top" width="15px" alt=""></div>
+            <div>Drivers Wanted: Join Now and Get a $100 Bonus After Your First 10 Deliveries. </div>
+        </div>
+        <div class="promo">Promo: 43cR</div>
+    </div>
+
     <div class="pro">
-        <video autoplay muted loop playsinline class="bg-video">
-            <source src="./Untitled video - Made with Clipchamp.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+        <div class="video-wrapper">
+            <video id="bgVideo" autoplay muted loop playsinline class="bg-video">
+                <source src="./Untitled video - Made with Clipchamp.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
+            <!-- Start/Stop Button -->
+            <button id="toggleBtn" class="video-toggle-btn">⏸ Pause</button>
+        </div>
+
         <div class="pro_x">
             <div class="header">
                 <div class="logo">

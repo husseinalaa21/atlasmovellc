@@ -1,3 +1,16 @@
+const video = document.getElementById('bgVideo');
+const toggleBtn = document.getElementById('toggleBtn');
+
+toggleBtn.addEventListener('click', () => {
+    if (video.paused) {
+        video.play();
+        toggleBtn.textContent = '⏸ Pause';
+    } else {
+        video.pause();
+        toggleBtn.textContent = '▶ Start';
+    }
+});
+
 const demoLoads = [
     {
         pickup: { location: "Brooklyn, NY 11231", date: "05/07/2025 00:00 EST" },

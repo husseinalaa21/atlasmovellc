@@ -53,6 +53,28 @@ img.bar_top {
     font-weight: 800;
 }
 
+.video-toggle-btn {
+    position: absolute;
+    bottom: 60px;
+    right: 20px;
+    padding: 8px 14px;
+    font-size: 14px;
+    color: rgb(226, 226, 227);
+    background-color: rgba(50, 51, 53, 0.6);
+    border: none;
+    border-radius: 500px;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-toggle-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
 .front-wrapper {
     overflow: hidden;
 }
@@ -71,15 +93,73 @@ img.bar_top {
 
 .pro .bg-video {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     z-index: 0;
+}
+
+@media only screen and (min-width: 800px) {
+    .pro .bg-video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        transform: translate(-50%, -50%);
+        object-fit: cover;
+        z-index: 0;
+    }
+}
+
+.top-offer-banner {
+    background-color: #3593f7;
+    padding: 10px 16px;
+    font-size: 15px;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 600;
+    color: #edeeef;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.offer_tap_lap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.close_tap {
+    text-align: center;
+    min-width: 25px;
+    min-height: 25px;
+    background-color: #459cf8;
+    cursor: pointer;
+    border-radius: 500px;
+}
+
+.top-offer-banner div {
+    padding: 10px;
+}
+
+.promo {
+    background-color: #79ace330;
+    width: 160px;
+    text-align: center;
+    margin-left: 10px;
+    cursor: pointer;
+    border: 3px dotted #79ade3;
+}
+
+.promo:hover {
+    background-color: #79ace3d6;
 }
 
 .pro::before {
@@ -92,6 +172,7 @@ img.bar_top {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.89) 0%, rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0.2) 100%);
     z-index: 1;
 }
+
 .pro_x {
     position: relative;
     z-index: 2;
@@ -203,26 +284,32 @@ img.bar_top {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    background-color: rgba(94, 189, 252, 0.096); /* Solid blue color */
-    box-shadow: 0 0 20px 8px rgba(94, 189, 252, 0.1); /* Glow effect */
+    background-color: rgba(94, 189, 252, 0.096);
+    /* Solid blue color */
+    box-shadow: 0 0 20px 8px rgba(94, 189, 252, 0.1);
+    /* Glow effect */
     z-index: -1;
     animation: pulse 3s ease-in-out infinite;
     z-index: -100;
 }
+
 @keyframes pulse {
     0% {
         transform: scale(1);
         box-shadow: 0 0 12px rgba(94, 189, 252, 0.5);
     }
+
     50% {
         transform: scale(1.15);
         box-shadow: 0 0 20px rgba(94, 189, 252, 0.7);
     }
+
     100% {
         transform: scale(1);
         box-shadow: 0 0 12px rgba(94, 189, 252, 0.5);
     }
 }
+
 .das_info {
     position: relative;
     z-index: 100;
@@ -246,7 +333,9 @@ img.bar_top {
     padding: 0 !important;
     margin: 0 !important;
 }
-.s_ div input, .s_ div select{
+
+.s_ div input,
+.s_ div select {
     width: 80%;
 }
 
@@ -313,7 +402,8 @@ img.seach_bar {
     /* makes it white */
 }
 
-.load-item , .load_title{
+.load-item,
+.load_title {
     margin-top: 20px;
     display: flex;
     justify-content: space-between;
@@ -321,18 +411,20 @@ img.seach_bar {
     /* Adds spacing between items */
 }
 
-.load-item div{
+.load-item div {
     border-bottom: 1px solid #edeeef;
     padding: 10px;
 }
 
-.load-item>* , .load_title>*{
+.load-item>*,
+.load_title>* {
     flex: 1;
     /* Equal width for all children */
     min-width: 0;
     /* Prevents overflow in some cases */
 }
-.load_title{
+
+.load_title {
     font-weight: 600;
     background-color: #edeeef;
     padding: 16px;
@@ -340,10 +432,13 @@ img.seach_bar {
 }
 
 @media only screen and (max-width: 800px) {
-    .search-bar form , .c_{
+
+    .search-bar form,
+    .c_ {
         display: block;
     }
-    .s_ p{
+
+    .s_ p {
         text-align: center !important;
         margin: auto !important;
         left: auto !important;

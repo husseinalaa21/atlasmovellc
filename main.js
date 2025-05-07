@@ -4,10 +4,10 @@ const toggleBtn = document.getElementById('toggleBtn');
 toggleBtn.addEventListener('click', () => {
     if (video.paused) {
         video.play();
-        toggleBtn.textContent = '⏸ Pause';
+        toggleBtn.innerHTML = '<img src="./pause-solid.svg" class="bar_top" width="8px" alt=""> &nbsp; Pause';
     } else {
         video.pause();
-        toggleBtn.textContent = '▶ Start';
+        toggleBtn.innerHTML = '<img src="./play-solid.svg" class="bar_top" width="8px" alt=""> &nbsp; Play';
     }
 });
 

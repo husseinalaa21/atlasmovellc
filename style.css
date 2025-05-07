@@ -132,15 +132,12 @@ img.bar_top {
 
 .offer_tap_lap {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
 }
 
 .close_tap {
     text-align: center;
-    min-width: 25px;
-    min-height: 25px;
-    background-color: #459cf8;
     cursor: pointer;
     border-radius: 500px;
 }

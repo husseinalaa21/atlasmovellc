@@ -225,33 +225,45 @@
                 </div>
             </div>
             <div class="subscribe">
+                <div id="subscribeMessage" class="subscribe-message"></div>
                 <h3>Subscribe to Receive Industry Updates</h3>
-                <form class="subscribe_form">
+                <form class="subscribe_form" id="subscribeForm">
                     <label for="email_input">Email Address <span class="required">(Optional)</span></label>
-                    <input type="email" id="email_input" placeholder="Enter your email address" required>
+                    <input type="email" id="email_input" name="email" placeholder="Enter your email address" required>
                     <button type="submit">Subscribe</button>
                 </form>
             </div>
             <div class="contact_info">
-                <div> <img src="map-location-solid.svg" width="20px" alt=""> &nbsp; &nbsp; <p>100 W Big Beaver Road,
-                        Suit 200, Troy, MI 48084</p>
-                </div>
                 <div> <img src="phone-solid.svg" width="20px" alt=""> &nbsp; &nbsp; <p>+1 (586) 782-6223</p>
                 </div>
                 <div> <img src="envelope-solid.svg" width="20px" alt=""> &nbsp; &nbsp; <p>office@atlasmovellc.com</p>
                 </div>
             </div>
+            <div class="map_section">
+                <h2><img src="map-location-solid.svg" width="20px" alt=""> &nbsp;  Our Office Location</h2>
+                <p><strong>100 W Big Beaver Road, Suite 200, Troy, MI 48084</strong></p>
+                <div class="map_container">
+                  <iframe
+                    src="https://www.google.com/maps?q=100+W+Big+Beaver+Road,+Suite+200,+Troy,+MI+48084&output=embed"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                  </iframe>
+                </div>
+              </div>
+              
         </div>
         <div class="list_options">
-            <a href="#"> About US </a>
-            <a href="#"> Privacy </a>
-            <a href="#"> Contact US </a>
-            <a href="#"> Support </a>
+            <a href="/about_us.html"> About US </a>
+            <a href="/privacy.html"> Privacy </a>
+            <a href="/contact_us.html"> Contact US </a>
+            <a href="/support.html"> Support </a>
         </div>
         <div class="copyright">
             All Rights Reserved © Atlas Move, LLC
         </div>
     </div>
+    <script src="subscribe.js"></script>
     <script src="main.js"></script>
 </body>
 

@@ -83,3 +83,11 @@ document.getElementById("search-form").addEventListener("submit", function (e) {
 
     // Later: Use this to filter or fetch loads from API
 });
+
+
+function register() {
+    window.open('apply.html', '_blank');
+}
+function learnmore() {
+    window.open('about_us.html', '_blank');
+}

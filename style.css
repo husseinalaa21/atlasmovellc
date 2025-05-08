@@ -5,6 +5,17 @@ body {
     height: 100%;
     overflow-x: hidden;
 }
+body {
+    touch-action: pan-x pan-y; /* Disable pinch-zoom */
+    -webkit-text-size-adjust: 100%; /* Prevent text inflation */
+    text-size-adjust: 100%;
+}
+@viewport {
+    zoom: 1.0;
+    min-zoom: 1.0;
+    max-zoom: 1.0;
+    user-zoom: fixed;
+}
 
 .inside_menu {
     position: fixed;
@@ -127,12 +138,14 @@ body {
 
 .contact_info {
     padding: 2rem;
-    border-radius: 12px;
     margin-top: 1rem;
     margin-bottom: 1rem;
     display: block;
 }
 
+.buttom_line {
+    border-top: 1px solid #cdd1d3;
+}
 
 .contact_item {
     color: #34495e;

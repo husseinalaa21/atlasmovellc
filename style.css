@@ -638,6 +638,8 @@ img.seach_bar {
 
 .contact_info p {
     font-size: 16px;
+    padding: 0 !important;
+    margin:8px 0 !important;
 }
 
 .subscribe {
@@ -775,6 +777,64 @@ img.seach_bar {
 .button_sticky:hover {
     opacity: 0.85;
 }
+
+.apply-section {
+    background-image: url('./show_3.jpeg');
+    background-size: cover;
+    background-position: center;
+    padding: 60px 20px;
+    color: white;
+    text-align: center;
+    position: relative;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+  }
+  
+  .apply-section::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(83, 97, 105, 0.721); /* Dark overlay for readability */
+    z-index: 0;
+  }
+  
+  .apply-content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin: auto;
+  }
+  
+  .apply-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    font-weight: 800;
+  }
+  
+  .apply-content p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+  }
+  
+  .join-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .join-options a {
+    color: #00a6ff; /* Gold links */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .join-options a:hover {
+    color: #fff;
+  }
+  
 
 
 @media only screen and (max-width: 800px) {

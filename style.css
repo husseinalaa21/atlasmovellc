@@ -428,7 +428,157 @@ img.seach_bar {
     border: 0 !important;
 }
 
-@media only screen and (max-width: 800px) {
+.services_show {
+    background-color: #f4f4f5;
+    font-optical-sizing: auto;
+    font-style: normal;
+    padding: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    color: #333;
+}
+
+.services_show h1,
+.van_section h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.services_show h2,
+.van_section h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
+    color: #555;
+}
+
+.services_show h3 {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+.images_show {
+    display: flex;
+    /* Flex container for images */
+    justify-content: center;
+    /* Center images horizontally */
+    gap: 1rem;
+    flex-wrap: wrap;
+    /* Wrap on smaller screens */
+    margin-bottom: 2rem;
+}
+
+.images_show img {
+    position: relative;
+    height: 300px;
+    /* Fixed height */
+    min-width: 100%;
+}
+
+.in_image {
+    border-radius: 20px;
+    width: 500px;
+    overflow: hidden;
+}
+
+.services_show p,
+.van_section p {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.blue_dot {
+    width: 12px;
+    height: 12px;
+    background-color: #85b9f1;
+    /* Bootstrap blue */
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 3px;
+}
+
+.quote-mark {
+    font-size: 2rem;
+    color: #007BFF;
+    /* Optional: Blue to match brand */
+    font-weight: bold;
+    margin: 0 4px;
+}
+
+.van_section {
+    font-optical-sizing: auto;
+    font-style: normal;
+    padding: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    color: #333;
+    max-width: 1200px;
+    margin: 0 auto;
+
+}
+
+
+.vans {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.vans img {
+    height: 200px;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.sp_van {
+    height: 260px !important;
+}
+
+.vans img:hover {
+    transform: scale(1.05);
+}
+
+.stars {
+    margin-top: 33px;
+}
+
+.van_card {
+    background-color: #f0f2f4;
+    border-radius: 12px;
+    padding: 0.8rem 1.2rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.van_card p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    color: #444;
+}
+
+.van_card strong {
+    color: #000;
+}
+
+.applay {
+    padding: 20px;
+    background-color: #2c8ef7;
+    color: whitesmoke;
+    text-align: left;
+    font-weight: 800;
+    font-size: 16px;
+    max-width: 1200px;
+    margin: 15px auto;
+}
+ @media only screen and (max-width: 800px) {
 
     .search-bar form,
     .c_ {

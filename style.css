@@ -524,8 +524,8 @@ img.seach_bar {
 
 
 .vans {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: auto auto;
     gap: 2rem;
     flex-wrap: wrap;
     align-items: center;
@@ -578,7 +578,206 @@ img.seach_bar {
     max-width: 1200px;
     margin: 15px auto;
 }
- @media only screen and (max-width: 800px) {
+
+.solid_title {
+    padding: 40px;
+    background-color: #e8e9ee;
+    color: rgb(17, 17, 17);
+}
+
+.st_title {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+
+.st_title h1 {
+    font-size: 30px;
+    font-weight: 900;
+    text-transform: uppercase !important;
+    color: #3b4550;
+    padding: 0;
+    margin: 0;
+}
+
+.st_title h3 {
+    font-size: 20px;
+    color: #383b3d;
+    padding: 0;
+    margin: 2px 0;
+}
+
+.logo_l {
+    margin-right: 20px;
+    margin-top: -16px;
+}
+
+.copyright {
+    size: 15px;
+    font-weight: 500;
+    color: #585b5e;
+}
+
+.end {
+    font-family: Arial, sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.contact_info {
+    padding: 30px 10px;
+}
+
+.contact_info div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.contact_info p {
+    font-size: 16px;
+}
+
+.subscribe {
+    padding: 10px;
+    border: 0;
+    border-top: 1px solid #d4d7d9;
+}
+
+.subscribe h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #424242;
+    text-align: left;
+    padding-bottom: 30px;
+}
+
+.subscribe_form {
+    position: relative;
+}
+
+.subscribe_form label {
+    position: absolute;
+    top: -24px;
+    left: 20px;
+    font-weight: 400;
+}
+
+.subscribe_form .required {
+    color: #42424287;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.subscribe_form input {
+    padding: 0.8rem 1rem;
+    width: 90%;
+    max-width: 650px;
+    border-radius: 2px;
+    font-size: 1rem;
+    background: none;
+    border: 1px solid #c4c8cc;
+}
+
+.subscribe_form button {
+    background-color: #c4c8cc;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.subscribe_form button:hover {
+    background-color: #0056b3;
+}
+
+.list_options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 1rem 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.list_options a {
+    text-decoration: none;
+    color: #333;
+    font-size: 17px;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    position: relative;
+    font-weight: 600;
+    color: #424242;
+}
+
+.list_options a:hover {
+    color: #007bff;
+}
+
+.list_options a::after {
+    content: '';
+    display: block;
+    width: 0%;
+    height: 2px;
+    background: #007bff;
+    transition: width 0.3s ease;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.list_options a:hover::after {
+    width: 100%;
+}
+
+.contact_info {
+    font-weight: 400;
+}
+
+.list_options {
+    background-color: #f0f0f3;
+}
+
+.copyright {
+    padding: 20px;
+    background-color: #f0f0f3;
+}
+
+.button_sticky {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    bottom: 30px;
+    right: 30px;
+    background-color: #007bff;
+    width: 60px;
+    height: 60px;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 999;
+    /* Hidden by default */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s ease;
+}
+
+.button_sticky img {
+    filter: brightness(0) invert(1);
+    /* make icon white */
+}
+
+.button_sticky:hover {
+    opacity: 0.85;
+}
+
+
+@media only screen and (max-width: 800px) {
 
     .search-bar form,
     .c_ {
@@ -590,5 +789,9 @@ img.seach_bar {
         margin: auto !important;
         left: auto !important;
         right: auto !important;
+    }
+
+    .vans {
+        display: block;
     }
 }

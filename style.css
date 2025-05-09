@@ -331,6 +331,33 @@ img.bar_top {
     font-size: 1.2rem;
     line-height:2rem;
 }
+.end_rec {
+    padding: 20px 40px;
+    background-color: #f0f0f3;
+}
+.login_signup_but {
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #dde0e3;
+    border-bottom: 1px solid #dde0e3;
+}
+.a_b, .b_b{
+    font-size: 14px;
+    padding: 10px 30px;
+    font-weight: 800;
+    border-radius: 60px;
+    cursor: pointer;
+}
+.a_b {
+    background-color: #007bff;
+    color: aliceblue;
+}
+.b_b {
+    background-color: #ffffff;
+    color: #007bff;
+    margin-left: 10px;
+}
 .as_1 {
     background-color: #f4f4f5;
 }

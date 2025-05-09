@@ -246,7 +246,94 @@ img.bar_top {
     min-height: 400px;
     overflow: hidden;
 }
+.pro_2 {
+    background: url('./atlasmovellc_2.jpg') no-repeat bottom right;    background-size: cover;
+    color: #ffffff; /* White text for readability */
+    min-height: 70vh;
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+}
 
+/* Optional: dark overlay for better text contrast */
+.pro_2::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* semi-transparent black overlay */
+    z-index: 0;
+}
+
+/* Ensure child elements appear above the overlay */
+.pro_2_x {
+    position: relative;
+    z-index: 1;
+}
+
+.about_us_list {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    padding: 20px;
+}
+
+.about_us_list a {
+    padding: 13px 26px;
+    background-color: #e6f0ff;
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    margin: 5px;
+    border-radius: 40px;
+}
+
+.about_section {
+    padding: 14px 26px;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    color: #363839;
+}
+
+.about_section h1 {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 2px;
+}
+
+.about_section h2 {
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 10px;
+    color: #5a5b5c;
+}
+.about_section h3 {
+    font-size: 1.4rem;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    color: #434445;
+    text-align: start;
+    padding: 10px;
+    border-left: 4px solid #859abd;
+}
+.about_section p {
+    font-size: 1.2rem;
+    line-height:2rem;
+}
+.about_section p mark{
+    background:none;
+    color: #065ab4;
+    font-size: 1.2rem;
+    line-height:2rem;
+}
+.as_1 {
+    background-color: #f4f4f5;
+}
 .pro .bg-video {
     position: absolute;
     top: 0;
@@ -1045,5 +1132,9 @@ img.seach_bar {
 
     .vans {
         display: block;
+    }
+    .about_us_list {
+        display: grid;
+        grid-template-columns: auto auto;
     }
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -8,9 +9,12 @@
         rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="./icon.png">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="handheldFriendly" content="true">
     <link rel="stylesheet" href="style.css">
-    <title>Atlas Move LLC - About US</title>
+    <title>Atlas Move LLC - Transportation - Van, Sprinter loads</title>
+
     <!-- CALENDER LINKS STYLE BY HUSSEIN -->
     <!-- Flatpickr CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
@@ -20,15 +24,18 @@
 
     <!-- Flatpickr JS -->
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
 </head>
+
 <body id="smart">
     <!-- OFFER -->
     <div id="offerBanner"></div>
     <!-- BACKGROUND -->
-    <div class="pro">
-        <div class="pro_x">
+    <div class="pro_2">
+        <div class="pro_2_x">
+
             <div class="header">
-                <div class="logo">
+                <div class="logo" onclick="logomain()">
                     <img src="./logo.png" alt="Main Logo" width="62px">
                 </div>
                 <div class="tools">
@@ -121,24 +128,65 @@
                         <div class="informations">
                             <h3>ATLAS MOVE LLC</h3>
                             <h2> ABOUT US </h2>
-                            <p>Atlas Move LLC is your trusted logistics partner for last-mile delivery solutions. We
-                                specialize
-                                in
-                                cargo van transportation, offering fast, safe, and on-time delivery services for
-                                businesses
-                                and
-                                individuals.</p>
+                            <p>At Atlas Move LLC, we are dedicated to delivering excellence—literally. As a trusted
+                                logistics partner, we specialize in last-mile delivery solutions tailored to meet the
+                                needs of modern businesses and individuals. Whether it's a critical shipment or daily
+                                delivery routes, our team ensures that every package arrives safely, efficiently, and on
+                                time.</p>
                         </div>
-                        <div class="options">
-                            <div class="blue" onclick="register()">REGISTER</div>
-                            <div class="white" onclick="learnmore()">LEARN MORE</div>
+                        <div class="about_us_list">
+                            <a href="#services"> #Our Services </a>
+                            <a href="#vision"> #Our Vision </a>
+                            <a href="#us"> #Why Choose Us? </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
+    <!-- TOP DONE -->
+    <div class="about_section as_1" id="services">
+        <h1>#Our Services</h1>
+        <h2>Comprehensive Moving Solutions</h2>
+        <p>We offer full-service residential and commercial relocation services including packing, loading,
+            transportation, and unpacking. Our team handles fragile items, specialty furniture, and vehicle
+            transportation with white-glove care.</p>
+
+        <h3>Logistics Management</h3>
+        <p>Professional coordination of local and long-distance moves with real-time tracking. Our fleet includes
+            climate-controlled trucks and specialized equipment for sensitive cargo.</p>
+
+        <h3>Storage Solutions</h3>
+        <p>Secure short-term and long-term storage facilities with 24/7 monitoring, inventory management, and flexible
+            access options for your belongings.</p>
+    </div>
+
+    <div class="about_section" id="vision">
+        <h1>#Our Vision</h1>
+        <h2>Industry Leadership</h2>
+        <p>To become the most trusted moving partner in North America through innovative logistics technology and
+            unmatched service standards by 2025.</p>
+
+        <h3>Sustainable Operations</h3>
+        <p>Implement eco-friendly practices across all operations - from biofuel-powered trucks to recyclable packing
+            materials - reducing our carbon footprint by 40% by 2024.</p>
+
+        <h3>Customer-Centric Approach</h3>
+        <p>Develop AI-powered moving assistants and virtual inventory systems to revolutionize the relocation experience
+            while maintaining human-centered service values.</p>
+    </div>
+
+    <div class="about_section as_1" id="us">
+        <h1>#Why Choose Us?</h1>
+        <h2>Experienced Professionals</h2>
+        <p> our team is highly trained in handling your most valuable items, including antiques, pianos, and sensitive electronics, ensuring they reach their destination safely.</p>
+
+        <h3>Advanced Technology</h3>
+        <p>Our proprietary logistics software provides precise ETAs and ensures damage-free moves. <mark>We also offer a driver dashboard that allows real-time bidding on loads</mark>, giving drivers more control. Additionally, live GPS tracking and digital inventory management provide full transparency for all parties involved.</p>
+
+        <h3>Fully Insured Protection</h3>
+        <p>We offer $1M liability coverage, along with $100K cargo insurance for shippers. From pickup to delivery, your goods are fully protected with no hidden fees.</p>
+    </div>
 
     <div class="end">
         <div class="solid_title">
@@ -191,4 +239,5 @@
     <script src="script.js"></script>
     <script src="subscribe.js"></script>
 </body>
+
 </html>

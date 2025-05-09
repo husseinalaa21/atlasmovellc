@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="./icon.png">
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="handheldFriendly" content="true">
+    <link rel="stylesheet" href="style.css">
+    <title>Atlas Move LLC - Transportation - Van, Sprinter loads</title>
+
+    <!-- CALENDER LINKS STYLE BY HUSSEIN -->
+    <!-- Flatpickr CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+    <!-- Flatpickr Theme (to customize colors later) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/material_blue.css">
+
+    <!-- Flatpickr JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+</head>
+
+<body id="smart">
+    <!-- OFFER -->
+    <div id="offerBanner"></div>
+    <!-- BACKGROUND -->
+    <div class="pro">
+        <div class="pro_x">
+            <div class="header">
+                <div class="logo" onclick="logomain()">
+                    <img src="./logo.png" alt="Main Logo" width="62px">
+                </div>
+                <div class="tools">
+                    <div class="login_but" onclick="openlogin()"> LOGIN </div>
+                    <div onclick="menu_togg()">
+                        <img src="./bars-solid.svg" class="bar_top" alt="Menu" width="23px">
+                    </div>
+                </div>
+            </div>
+            <!-- Side Menu -->
+            <div id="sideMenu" style="display: none;">
+                <div class="inside_menu">
+                    <div class="menu_content">
+                        <div class="menu_wrapper">
+                            <!-- Main Menu Sections -->
+                            <div class="menu_main">
+                                <nav class="menu_group">
+                                    <h3 class="menu_title">Quick Links</h3>
+                                    <div class="menu_links">
+                                        <a href="/about_us.html" class="menu_link">
+                                            <i class="fas fa-info-circle"></i>
+                                            About Us
+                                        </a>
+                                        <a href="/privacy.html" class="menu_link">
+                                            <i class="fas fa-shield-alt"></i>
+                                            Privacy
+                                        </a>
+                                        <a href="/support.html" class="menu_link">
+                                            <i class="fas fa-life-ring"></i>
+                                            Support
+                                        </a>
+                                        <a href="/contact_us.html" class="menu_link">
+                                            <i class="fas fa-envelope"></i>
+                                            Contact Us
+                                        </a>
+                                    </div>
+                                </nav>
+
+                                <div class="menu_group">
+                                    <h3 class="menu_title">Account Actions</h3>
+                                    <div class="menu_actions">
+                                        <a href="/login.html" class="action_btn primary">
+                                            <i class="fas fa-sign-in-alt"></i>
+                                            Driver Login
+                                        </a>
+                                        <a href="/apply.html" class="action_btn secondary">
+                                            <i class="fas fa-user-plus"></i>
+                                            Register Now
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Contact Information -->
+                            <div class="contact_info">
+                                <h3 class="menu_title">Contact Details</h3>
+                                <div class="contact_item">
+                                    <i class="fas fa-phone"></i>
+                                    <strong>Phone:</strong>
+                                    <a href="tel:+15867826223">+1 (586) 782-6223</a>
+                                </div>
+                                <div class="contact_item">
+                                    <i class="fas fa-envelope"></i>
+                                    <strong>Email:</strong>
+                                    <a href="mailto:office@atlasmovellc.com">office@atlasmovellc.com</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="subscribe">
+                            <div id="subscribeMessage" class="subscribe-message"></div>
+                            <h3>Subscribe to Receive Industry Updates</h3>
+                            <form class="subscribe_form" id="subscribeForm">
+                                <label for="email_input">Email Address <span class="required">(Optional)</span></label>
+                                <input type="email" id="email_input" name="email" placeholder="Enter your email address"
+                                    required>
+                                <button type="submit">Subscribe</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="blink_click" onclick="menu_togg()"><img src="./xmark-solid.svg" class="blue_x"
+                            width="30px" alt=""></div>
+                </div>
+            </div>
+
+            <div class="front-wrapper">
+                <div class="front">
+                    <!-- Section A -->
+                    <div class="a">
+                        <div class="informations">
+                            <h3>ATLAS MOVE LLC</h3>
+                            <h2> ABOUT US </h2>
+                            <p>Atlas Move LLC is your trusted logistics partner for last-mile delivery solutions. We
+                                specialize
+                                in
+                                cargo van transportation, offering fast, safe, and on-time delivery services for
+                                businesses
+                                and
+                                individuals.</p>
+                        </div>
+                        <div class="options">
+                            <div class="blue" onclick="register()">REGISTER</div>
+                            <div class="white" onclick="learnmore()">LEARN MORE</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- TOP DONE -->
+
+
+    <div class="end">
+        <div class="solid_title">
+            <div class="st_title">
+                <div class="logo_l">
+                    <img src="./logo.png" width="90px" alt="">
+                </div>
+                <div>
+                    <h1> ATLAS MOVE, LLC </h1>
+                    <h3> Logistics & Transportation Company</h3>
+                </div>
+            </div>
+            <div class="subscribe">
+                <div id="subscribeMessage" class="subscribe-message"></div>
+                <h3>Subscribe to Receive Industry Updates</h3>
+                <form class="subscribe_form" id="subscribeForm">
+                    <label for="email_input">Email Address <span class="required">(Optional)</span></label>
+                    <input type="email" id="email_input" name="email" placeholder="Enter your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+            <div class="contact_info buttom_line">
+                <div> <img src="phone-solid.svg" width="20px" alt=""> &nbsp; &nbsp; <p>+1 (586) 782-6223</p>
+                </div>
+                <div> <img src="envelope-solid.svg" width="20px" alt=""> &nbsp; &nbsp; <p>office@atlasmovellc.com</p>
+                </div>
+            </div>
+            <div class="map_section">
+                <h2><img src="map-location-solid.svg" width="20px" alt=""> &nbsp; Our Office Location</h2>
+                <p><strong>100 W Big Beaver Road, Suite 200, Troy, MI 48084</strong></p>
+                <div class="map_container">
+                    <iframe
+                        src="https://www.google.com/maps?q=100+W+Big+Beaver+Road,+Suite+200,+Troy,+MI+48084&output=embed"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+
+        </div>
+        <div class="list_options">
+            <a href="/about_us.html"> About US </a>
+            <a href="/privacy.html"> Privacy </a>
+            <a href="/contact_us.html"> Contact US </a>
+            <a href="/support.html"> Support </a>
+        </div>
+        <div class="copyright">
+            All Rights Reserved © Atlas Move, LLC
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="subscribe.js"></script>
+</body>
+
+</html>

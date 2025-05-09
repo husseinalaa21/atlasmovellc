@@ -282,6 +282,7 @@ img.bar_top {
 
 .about_us_list a {
     padding: 13px 26px;
+    width: fit-content;
     background-color: #e6f0ff;
     color: #333;
     font-size: 16px;

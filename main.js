@@ -1,13 +1,13 @@
 const video = document.getElementById('bgVideo');
-const toggleBtn = document.getElementById('toggleBtn');
+const toggleBtn_s = document.getElementById('toggleBtn_s');
 
-toggleBtn.addEventListener('click', () => {
+toggleBtn_s.addEventListener('click', () => {
     if (video.paused) {
         video.play();
-        toggleBtn.innerHTML = '<img src="./pause-solid.svg" class="bar_top" width="8px" alt=""> &nbsp; Pause';
+        toggleBtn_s.innerHTML = '<img src="./pause-solid.svg" class="bar_top" width="8px" alt=""> &nbsp; Pause';
     } else {
         video.pause();
-        toggleBtn.innerHTML = '<img src="./play-solid.svg" class="bar_top" width="8px" alt=""> &nbsp; Play';
+        toggleBtn_s.innerHTML = '<img src="./play-solid.svg" class="bar_top" width="8px" alt=""> &nbsp; Play';
     }
 });
 

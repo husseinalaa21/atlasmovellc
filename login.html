@@ -28,19 +28,16 @@
 </head>
 
 <body id="smart">
-    <!-- OFFER -->
-    <div id="offerBanner"></div>
     <!-- BACKGROUND -->
-    <div class="pro">
-        <div class="pro_x">
-            <div class="header">
+    <div class="pro_6">
+        <div class="pro_6_x">
+            <div class="header header_">
                 <div class="logo" onclick="logomain()">
                     <img src="./logo.png" alt="Main Logo" width="62px">
                 </div>
                 <div class="tools">
-                    <div class="login_but" onclick="openlogin()"> LOGIN </div>
                     <div onclick="menu_togg()">
-                        <img src="./bars-solid.svg" class="bar_top" alt="Menu" width="23px">
+                        <img src="./bars-solid.svg" class="bar_inside" alt="Menu" width="23px">
                     </div>
                 </div>
             </div>
@@ -125,19 +122,6 @@
                     <!-- Section A -->
                     <div class="a">
                         <div class="informations">
-                            <h3>ATLAS MOVE LLC</h3>
-                            <h2> ABOUT US </h2>
-                            <p>Atlas Move LLC is your trusted logistics partner for last-mile delivery solutions. We
-                                specialize
-                                in
-                                cargo van transportation, offering fast, safe, and on-time delivery services for
-                                businesses
-                                and
-                                individuals.</p>
-                        </div>
-                        <div class="options">
-                            <div class="blue" onclick="register()">REGISTER</div>
-                            <div class="white" onclick="learnmore()">LEARN MORE</div>
                         </div>
                     </div>
                 </div>
@@ -145,6 +129,30 @@
         </div>
     </div>
     <!-- TOP DONE -->
+
+    <div class="login-container_011">
+        <h2 class="login-title_011">Atlas Move Driver Login</h2>
+        <form id="loginForm_011">
+            <label for="email" class="login-label_011">Email Address</label>
+            <input type="email" id="email" name="email" class="login-input_011" placeholder="you@example.com"
+                required />
+
+            <label for="password" class="login-label_011">Password</label>
+            <input type="password" id="password" name="password" class="login-input_011"
+                placeholder="Enter your password" required />
+
+            <button type="submit" class="login-button_011">Login</button>
+        </form>
+        <div class="footer-text_011">
+            Don't have an account? <a href="/register"
+                style="color: #007BFF; text-decoration: none; font-weight: 600;">Register now</a>
+        </div>
+        <div class="error-message_011" id="errorMsg_011"></div>
+        <div class="success-message_011" id="successMsg_011"></div>
+        <div class="footer-text_011">
+            Need help? Contact support@atlasmovellc.com
+        </div>
+    </div>
 
     <div class="end">
         <div class="solid_title">
@@ -200,6 +208,7 @@
             All Rights Reserved © Atlas Move, LLC
         </div>
     </div>
+    <script src="login.js"></script>
     <script src="script.js"></script>
     <script src="subscribe.js"></script>
 </body>

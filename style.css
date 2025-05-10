@@ -176,6 +176,12 @@ body {
     height: 120px;
 }
 
+
+.header_ {
+    border-bottom: 1px solid #eeeeef !important;
+    margin-bottom: 30px;
+}
+
 img.bar_top {
     filter: brightness(0) invert(1);
     /* makes it white */
@@ -1003,6 +1009,21 @@ img.bar_top {
     border-radius: 50%;
 }
 
+
+.pro_6 {
+    background: #ffffff;
+    width: 100%;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+/* Ensure child elements appear above the overlay */
+.pro_6_x {
+    position: relative;
+    z-index: 1;
+}
+
 @media (max-width: 768px) {
     .section-header_09 h2 {
         font-size: 2rem;
@@ -1807,4 +1828,79 @@ img.seach_bar {
         display: grid;
         grid-template-columns: auto auto;
     }
+}
+
+.login-container_011 {
+    width: 80%;
+    max-width: 600px;
+    margin: auto;
+    padding: 2rem;
+    border: 1px solid #e2e4e7;
+    border-radius: 4px;
+    background-color: #ffffff;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    margin-bottom: 40px;
+}
+
+.login-title_011 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.login-label_011 {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.login-input_011 {
+    width: 95%;
+    padding: 0.75rem;
+    margin-bottom: 1.25rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.login-button_011 {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #007BFF;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-button_011:hover {
+    background-color: #0056b3;
+}
+
+.footer-text_011 {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.error-message_011 {
+    color: red;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.success-message_011 {
+    color: green;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 1rem;
 }

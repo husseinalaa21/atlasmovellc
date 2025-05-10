@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Home Page -->
+  <url>
+    <loc>https://www.atlasmovellc.com/</loc>
+    <lastmod>2025-05-10</lastmod>
+    <changefreq>daily</changefreq> <!-- Home page is likely updated often -->
+    <priority>1.00</priority> <!-- High priority for home page -->
+  </url>
+
+  <!-- About Us Page -->
+  <url>
+    <loc>https://www.atlasmovellc.com/about-us.html</loc>
+    <lastmod>2025-05-10</lastmod>
+    <changefreq>monthly</changefreq> <!-- Low frequency change, content updates occasionally -->
+    <priority>0.80</priority> <!-- About Us page has medium priority -->
+  </url>
+
+  <!-- Privacy Page -->
+  <url>
+    <loc>https://www.atlasmovellc.com/privacy.html</loc>
+    <lastmod>2025-05-10</lastmod>
+    <changefreq>yearly</changefreq> <!-- Privacy Policy changes rarely -->
+    <priority>0.60</priority> <!-- Lower priority, but important for legal reasons -->
+  </url>
+
+  <!-- Contact Us Page -->
+  <url>
+    <loc>https://www.atlasmovellc.com/contact-us.html</loc>
+    <lastmod>2025-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Support Page -->
+  <url>
+    <loc>https://www.atlasmovellc.com/support.html</loc>
+    <lastmod>2025-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Driver Login Page -->
+  <url>
+    <loc>https://www.atlasmovellc.com/login.html</loc>
+    <lastmod>2025-05-10</lastmod>
+    <changefreq>weekly</changefreq> <!-- Login page may change frequently due to new features or updates -->
+    <priority>0.90</priority> <!-- Higher priority for login page -->
+  </url>
+
+</urlset>

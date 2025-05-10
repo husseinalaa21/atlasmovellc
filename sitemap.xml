@@ -11,7 +11,7 @@
 
   <!-- About Us Page -->
   <url>
-    <loc>https://www.atlasmovellc.com/about-us.html</loc>
+    <loc>https://www.atlasmovellc.com/about_us.html</loc>
     <lastmod>2025-05-10</lastmod>
     <changefreq>monthly</changefreq> <!-- Low frequency change, content updates occasionally -->
     <priority>0.80</priority> <!-- About Us page has medium priority -->
@@ -27,7 +27,7 @@
 
   <!-- Contact Us Page -->
   <url>
-    <loc>https://www.atlasmovellc.com/contact-us.html</loc>
+    <loc>https://www.atlasmovellc.com/contact_us.html</loc>
     <lastmod>2025-05-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>

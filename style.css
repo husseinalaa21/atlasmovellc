@@ -452,7 +452,6 @@ img.bar_top {
 .pro_4_x {
     position: relative;
     z-index: 1;
-    padding: 10px 20px;
 }
 
 .options_cx {
@@ -1141,7 +1140,7 @@ img.bar_top {
 
 .informations h3 {
     font-size: 22px;
-    letter-spacing: 0.8ch;
+    letter-spacing: 0.7ch;
     /* Increased from 2px to 4px */
     margin-bottom: 10px;
     color: #7bbefc;

@@ -452,6 +452,7 @@ img.bar_top {
 .pro_4_x {
     position: relative;
     z-index: 1;
+    padding: 10px 20px;
 }
 
 .options_cx {

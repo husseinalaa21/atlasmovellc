@@ -559,7 +559,6 @@ img.bar_top {
     border-radius: 8px;
     padding: 1rem 1.5rem;
     margin: 0.5rem 1rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
@@ -652,7 +651,6 @@ img.bar_top {
     margin: 3rem auto;
     padding: 3rem 4rem;
     background: #FFFFFF;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     line-height: 1.6;
@@ -942,7 +940,6 @@ img.bar_top {
     background: #FFFFFF;
     padding: 2rem;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease;
 }
 
@@ -1904,4 +1901,19 @@ img.seach_bar {
     font-size: 0.9rem;
     text-align: center;
     margin-top: 1rem;
+}
+
+.dash_info h3 {
+    text-align: center;
+    font-size: 14px;
+    width: 90%;
+    margin: auto;
+}
+.dash_info h3 mark{
+    background-color: #007BFF;
+    color: #fbf9f9;
+    padding: 5px 10px;
+    border-radius: 30px;
+    margin-right: 4px;
+    font-size: 12px;
 }

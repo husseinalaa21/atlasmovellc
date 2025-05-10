@@ -27,7 +27,11 @@ function logomain() {
 }
 document.addEventListener('DOMContentLoaded', function () {
     setTimeout(() => {
-        const offerBanner = document.getElementById('offerBanner') || createBannerElement();
+        const offerBanner = document.getElementById('offerBanner');
+
+        // Only continue if #offerBanner exists
+        if (!offerBanner) return;
+
         offerBanner.innerHTML = `
         <div class="top-offer-banner">
             <div class="offer-content">
@@ -64,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 z-index: 1000;
                 animation: slideDown 0.5s ease-out;
             }
-            
+
             .offer-content {
                 display: flex;
                 justify-content: space-between;
@@ -73,13 +77,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 width: 100%;
                 gap: 1rem;
             }
-            
+
             .offer_controls {
                 display: flex;
                 align-items: center;
                 gap: 1.5rem;
             }
-            
+
             .promo-badge {
                 background: rgba(255,255,255,0.15);
                 padding: 0.5rem 1rem;
@@ -89,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 gap: 0.5rem;
                 font-size: 0.9em;
             }
-            
+
             .close-btn {
                 background: transparent;
                 border: none;
@@ -98,46 +102,45 @@ document.addEventListener('DOMContentLoaded', function () {
                 border-radius: 50%;
                 transition: background 0.2s;
             }
-            
+
             .close-btn:hover {
                 background: rgba(255,255,255,0.1);
             }
-            
+
             .pulsate {
                 animation: pulse 1.5s infinite;
             }
-            
+
             @keyframes slideDown {
                 from { transform: translateY(-100%); }
                 to { transform: translateY(0); }
             }
-            
+
             @keyframes pulse {
                 0% { opacity: 1; }
                 50% { opacity: 0.6; }
                 100% { opacity: 1; }
             }
-            
+
             @media (max-width: 768px) {
                 .offer-content {
                     flex-direction: column;
                     text-align: center;
                 }
-                
+
                 .offer_controls {
                     flex-direction: column;
                     gap: 1rem;
                 }
-                
+
                 .promo-badge {
                     order: 1;
                 }
-                
+
                 .close-btn {
                     order: 2;
                 }
             }`;
-
         document.head.appendChild(style);
 
         // Add close functionality
@@ -146,11 +149,4 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
     }, 10000);
-
-    function createBannerElement() {
-        const banner = document.createElement('div');
-        banner.id = 'offerBanner';
-        document.body.prepend(banner);
-        return banner;
-    }
 });

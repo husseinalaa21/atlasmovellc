@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="handheldFriendly" content="true">
     <link rel="stylesheet" href="style.css">
-    <title>Atlas Move LLC - Transportation - Van, Sprinter loads</title>
+    <title>Atlas Move LLC - Support</title>
 
     <!-- CALENDER LINKS STYLE BY HUSSEIN -->
     <!-- Flatpickr CSS -->
@@ -28,11 +28,9 @@
 </head>
 
 <body id="smart">
-    <!-- OFFER -->
-    <div id="offerBanner"></div>
     <!-- BACKGROUND -->
-    <div class="pro">
-        <div class="pro_x">
+    <div class="pro_4">
+        <div class="pro_4_x">
             <div class="header">
                 <div class="logo" onclick="logomain()">
                     <img src="./logo.png" alt="Main Logo" width="62px">
@@ -126,18 +124,11 @@
                     <div class="a">
                         <div class="informations">
                             <h3>ATLAS MOVE LLC</h3>
-                            <h2> ABOUT US </h2>
-                            <p>Atlas Move LLC is your trusted logistics partner for last-mile delivery solutions. We
-                                specialize
-                                in
-                                cargo van transportation, offering fast, safe, and on-time delivery services for
-                                businesses
-                                and
-                                individuals.</p>
+                            <h2> SUPPORT </h2>
                         </div>
                         <div class="options">
-                            <div class="blue" onclick="register()">REGISTER</div>
-                            <div class="white" onclick="learnmore()">LEARN MORE</div>
+                            <div class="blue" onclick="register()">CALL US +1 (586) 782-6223 </div>
+                            <div class="blue" onclick="learnmore()">TEXT US +1 (586) 782-6223</div>
                         </div>
                     </div>
                 </div>
@@ -146,6 +137,121 @@
     </div>
     <!-- TOP DONE -->
 
+
+    <!-- FAQ Section -->
+    <div class="faq-grid_09">
+        <div class="faq-item_09">
+            <div class="faq-question_09">
+                <i class="fas fa-exclamation-triangle"></i>
+                <h3>Emergency Protocol (Accidents/Injuries)</h3>
+            </div>
+            <p class="faq-answer_09">
+                1. <strong>Immediately call 911</strong> for emergencies<br>
+                2. Secure the scene per DOT regulations<br>
+                3. Contact us within 2 hours: <strong>+1 (586) 782-6223</strong><br>
+                4. We'll notify shipper/broker once safe
+            </p>
+        </div>
+
+        <div class="faq-item_09">
+            <div class="faq-question_09">
+                <i class="fas fa-truck-moving"></i>
+                <h3>Shipment Tracking & Updates</h3>
+            </div>
+            <p class="faq-answer_09">
+                • Mandatory check-ins every 4 hours via ELD<br>
+                • Delay reporting required within 30 minutes<br>
+                • Final delivery confirmation via mobile app
+            </p>
+        </div>
+
+        <div class="faq-item_09">
+            <div class="faq-question_09">
+                <i class="fas fa-wrench"></i>
+                <h3>Vehicle Breakdown Protocol</h3>
+            </div>
+            <p class="faq-answer_09">
+                1. Move to safe location<br>
+                2. Post emergency signage<br>
+                3. Contact your maintenance provider<br>
+                4. Notify us immediately if shipment ETA affected
+            </p>
+        </div>
+
+        <div class="faq-item_09">
+            <div class="faq-question_09">
+                <i class="fas fa-file-invoice"></i>
+                <h3>Payment & Documentation</h3>
+            </div>
+            <p class="faq-answer_09">
+                • Submit BOL on Pick Up<br>
+                • Wait For Good to go!<br>
+                • Once Delivery completed, let us know<br>
+                • Wait for good to go!<br>
+                • You will get paid within 72 hours after delivery.
+            </p>
+        </div>
+    </div>
+
+    <!-- Support Ticket Form -->
+    <div class="ticket-form_09">
+        <div class="form-title_09">
+            <h2>Submit Support Ticket</h2>
+            <p>We'll respond within 24 business hours</p>
+        </div>
+
+        <form id="supportForm_09">
+            <div class="input-group_09">
+                <label class="input-label_09" for="subject_09">Subject</label>
+                <select class="select-field_09" id="subject_09" name="subject" required>
+                    <option value="">Select an issue type</option>
+                    <option value="tracking">Tracking Issue</option>
+                    <option value="billing">Billing Inquiry</option>
+                    <option value="schedule">Schedule Change</option>
+                    <option value="damage">Damage Claim</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div class="input-group_09">
+                <label class="input-label_09" for="email_09">Your Email</label>
+                <input class="input-field_09" type="email" id="email_09" name="email" required>
+            </div>
+
+            <div class="input-group_09">
+                <label class="input-label_09" for="description_09">Description</label>
+                <textarea class="input-field_09" id="description_09" name="description" rows="6" required></textarea>
+            </div>
+
+            <div class="input-group_09">
+                <label class="input-label_09" for="urgency_09">Urgency Level</label>
+                <select class="select-field_09" id="urgency_09" name="urgency" required>
+                    <option value="low">Low - General Inquiry</option>
+                    <option value="medium">Medium - Needs resolution within 48hrs</option>
+                    <option value="high">High - Time-sensitive issue</option>
+                </select>
+            </div>
+
+            <button class="submit-btn_09" type="submit">Submit Ticket</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('supportForm_09').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const ticketData = {
+                email: document.getElementById('email_09').value,
+                subject: document.getElementById('subject_09').value,
+                description: document.getElementById('description_09').value,
+                urgency: document.getElementById('urgency_09').value
+            };
+
+            console.log('Ticket submitted:', ticketData);
+            alert(`Thank you! A confirmation has been sent to ${ticketData.email}`);
+            this.reset();
+        });
+    </script>
 
     <div class="end">
         <div class="solid_title">

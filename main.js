@@ -60,7 +60,7 @@ const batchSize = 4;
 async function fetchLoadsFromServer() {
     try {
         const isTestMode = location.hostname === "127.0.0.1";
-        const serverURL = isTestMode ? "http://localhost:3000/" : "https://server.atlasmovellc.com/demo";
+        const serverURL = isTestMode ? "http://localhost:5000/demo" : "https://server.atlasmovellc.com/demo";
 
         const response = await fetch(serverURL);
         const data = await response.json();

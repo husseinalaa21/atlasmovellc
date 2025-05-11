@@ -169,20 +169,22 @@
         </div>
     </div>
     <!-- TOP DONE -->
+
     <div class="middle">
         <div class="dashboard">
             <div class="dash_info">
-                <h2> Find a load based on your location </h2>
-                <h3><Mark>DEMO</Mark> FOR LIVE LOAD BOARD, JOIN US TODAY!</h3>
+                <h2>Find a load based on your location</h2>
+                <h3><mark>DEMO</mark> FOR LIVE LOAD BOARD, JOIN US TODAY!</h3>
                 <div class="search-bar">
                     <form id="search-form">
                         <div class="s_ c_">
                             <div>
-                                <p> Pick Up Address </p>
-                                <input type="text" placeholder="Select location, ZIP code, Or city and state" name="location" required>
+                                <p>Pick Up Address</p>
+
+                                <input type="text" name="location" placeholder="City, State, or ZIP Code">
                             </div>
                             <div>
-                                <p> Pick Up Date</p>
+                                <p>Pick Up Date</p>
                                 <input type="text" id="pickupDate" name="pickupDate" placeholder="Pick Up Date"
                                     required>
                             </div>
@@ -190,10 +192,12 @@
                         <div class="s_">
                             <div>
                                 <p>Select Radius</p>
-                                <select name="radius" class="radio_" required>
+                                <select name="radius" class="radio_">
                                     <option value="50">50 miles</option>
-                                    <option value="100">100 miles</option>
+                                    <option value="100" selected>100 miles</option>
                                     <option value="200">200 miles</option>
+                                    <option value="300">300 miles</option>
+                                    <option value="400">400 miles</option>
                                 </select>
                             </div>
                             <button type="submit">
@@ -204,13 +208,11 @@
                 </div>
             </div>
 
-            <!-- Loads will be inserted here by JavaScript -->
             <div id="load-container-wrapper" style="position: relative;">
                 <div id="load-container"></div>
                 <div id="fade-out" class="fade-out-overlay"></div>
             </div>
             <button id="load-more-btn" class="load-more-btn_2">Load More</button>
-
         </div>
     </div>
     <div class="services_show">

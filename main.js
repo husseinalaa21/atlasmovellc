@@ -94,6 +94,7 @@ function renderLoads(loadBatch) {
         const pickupLocation = `${load.pickup.city} ${load.pickup.zip_code}`;
         const deliveryLocation = `${load.dropoff.city} ${load.dropoff.zip_code}`;
         const pickupDate = `${load.pickup_date.date} ${load.pickup_date.time}`;
+        const drop_off_date = `${load.drop_off_date.date} ${load.drop_off_date.time}`
         const weight = load.details?.weight || "N/A";
         const pieces = load.details?.pieces || "N/A";
         const size = load.details?.size || "N/A";
@@ -108,7 +109,7 @@ function renderLoads(loadBatch) {
                 </div>
                 <div class="loaded-miles_2">${load.loaded_miles} miles</div>
                 <div class="delivery_2">
-                    <strong>${deliveryLocation}</strong><br>N/A
+                    <strong>${deliveryLocation}</strong><br>${drop_off_date}
                 </div>
             </div>
             <div class="load-details_2">

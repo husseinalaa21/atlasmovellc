@@ -1,3 +1,4 @@
+
 const video = document.getElementById('bgVideo');
 const toggleBtn_s = document.getElementById('toggleBtn_s');
 
@@ -11,79 +12,130 @@ toggleBtn_s.addEventListener('click', () => {
     }
 });
 
-const demoLoads = [
-    {
-        pickup: { location: "Brooklyn, NY 11231", date: "05/07/2025 00:00 EST" },
-        delivery: { location: "Chicago, IL 60644", date: "05/10/2025 08:00 EST" },
-        details: { distance: "810 miles", weight: "500 lbs", pieces: "1", size: "120x12x12 in." }
-    },
-    {
-        pickup: { location: "North Bergen, NJ 07047", date: "05/07/2025 07:00 EST" },
-        delivery: { location: "Torrance, CA 90501", date: "05/11/2025 02:00 EST" },
-        details: { distance: "2800 miles", weight: "133 lbs", pieces: "1", size: "68x25x29 in." }
-    },
-    {
-        pickup: { location: "Newark, NJ 07114", date: "05/06/2025 23:00 EST" },
-        delivery: { location: "Richmond, VA 23224", date: "05/10/2025 04:00 EST" },
-        details: { distance: "334 miles", weight: "1083 lbs", pieces: "0", size: "NO DIMENSIONS SPECIFIED" }
-    },
-    // Add more demo loads as needed
-];
-
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
     flatpickr("#pickupDate", {
         minDate: "today",
-        maxDate: new Date().fp_incr(14), // 14 days from today
+        maxDate: new Date().fp_incr(14),
         dateFormat: "Y-m-d",
         theme: "material_blue",
-        disableMobile: true // force desktop-style calendar on mobile
+        disableMobile: true
+    });
+
+    await fetchLoadsFromServer();
+    renderNextLoads();
+
+    document.getElementById("load-more-btn").addEventListener("click", () => {
+        renderNextLoads();
+    });
+
+    document.getElementById("search-form").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const formData = new FormData(this);
+        const locationInput = formData.get("location").toLowerCase().trim();
+        const pickupDateInput = formData.get("pickupDate");
+        const radiusInput = parseInt(formData.get("radius"));
+
+        const filtered = allLoads.filter(load => {
+            const pickup = load.pickup;
+            const locationMatch =
+                pickup.city.toLowerCase().includes(locationInput) ||
+                pickup.zip_code.includes(locationInput);
+            const dateMatch = load.pickup_date.date === pickupDateInput;
+            const withinRadius = calculateDistance(pickup.zip_code) <= radiusInput;
+
+            return locationMatch && dateMatch && withinRadius;
+        });
+
+        currentIndex = 0;
+        document.getElementById("load-container").innerHTML = "";
+        renderFilteredLoads(filtered);
     });
 });
 
+let allLoads = [];
+let currentIndex = 0;
+const batchSize = 4;
 
-function loadDemoData() {
-    const container = document.getElementById("load-container");
+async function fetchLoadsFromServer() {
+    try {
+        const isTestMode = location.hostname === "127.0.0.1";
+        const serverURL = isTestMode ? "http://localhost:3000/" : "https://server.atlasmovellc.com/demo";
 
-    demoLoads.forEach(load => {
-        const loadItem = document.createElement("div");
-        loadItem.className = "load-item";
+        const response = await fetch(serverURL);
+        const data = await response.json();
 
-        loadItem.innerHTML = `
-        <div>
-          <strong>${load.pickup.location}</strong><br>
-          ${load.pickup.date}
-        </div>
-        <div>
-          <strong>${load.delivery.location}</strong><br>
-          ${load.delivery.date}
-        </div>
-        <div>
-          ${load.details.distance}<br>
-          ${load.details.weight}, ${load.details.pieces} pieces<br>
-          ${load.details.size}
-        </div>
-      `;
-
-        container.appendChild(loadItem);
-    });
+        allLoads = data.loads;
+    } catch (error) {
+        console.error("Failed to fetch loads:", error);
+    }
 }
 
-// Run after DOM loads
-document.addEventListener("DOMContentLoaded", loadDemoData);
+function renderNextLoads() {
+    const nextBatch = allLoads.slice(currentIndex, currentIndex + batchSize);
+    renderLoads(nextBatch);
+    currentIndex += batchSize;
 
+    toggleLoadMore(allLoads);
+}
 
-document.getElementById("search-form").addEventListener("submit", function (e) {
-    e.preventDefault();
-    const formData = new FormData(this);
-    const location = formData.get("location");
-    const pickupDate = formData.get("pickupDate");
-    const radius = formData.get("radius");
+function renderFilteredLoads(loads) {
+    const nextBatch = loads.slice(currentIndex, currentIndex + batchSize);
+    renderLoads(nextBatch);
+    currentIndex += batchSize;
 
-    console.log("Search:", { location, pickupDate, radius });
+    toggleLoadMore(loads, () => renderFilteredLoads(loads));
+}
 
-    // Later: Use this to filter or fetch loads from API
-});
+function renderLoads(loadBatch) {
+    const container = document.getElementById("load-container");
 
+    loadBatch.forEach(load => {
+        const pickupLocation = `${load.pickup.city} ${load.pickup.zip_code}`;
+        const deliveryLocation = `${load.dropoff.city} ${load.dropoff.zip_code}`;
+        const pickupDate = `${load.pickup_date.date} ${load.pickup_date.time}`;
+        const weight = load.details?.weight || "N/A";
+        const pieces = load.details?.pieces || "N/A";
+        const size = load.details?.size || "N/A";
+        const price = load.price ? `$${load.price}` : "Price not listed";
+
+        const loadItem = document.createElement("div");
+        loadItem.className = "load-item_2";
+        loadItem.innerHTML = `
+            <div class="load-main_2">
+                <div class="pickup_2">
+                    <strong>${pickupLocation}</strong><br>${pickupDate}
+                </div>
+                <div class="loaded-miles_2">${load.loaded_miles} miles</div>
+                <div class="delivery_2">
+                    <strong>${deliveryLocation}</strong><br>N/A
+                </div>
+            </div>
+            <div class="load-details_2">
+                <div>${weight}, ${pieces} pieces | ${size}<br>${price} or make offer</div>
+                <div><button class="book-btn_2" onclick="openlogin()">Book</button></div>
+            </div>
+        `;
+        container.appendChild(loadItem);
+    });
+
+    document.getElementById("fade-out").classList.add("hidden");
+}
+
+function toggleLoadMore(loads, onClick = renderNextLoads) {
+    const btn = document.getElementById("load-more-btn");
+    if (currentIndex >= loads.length) {
+        btn.style.display = "none";
+    } else {
+        btn.style.display = "block";
+        btn.onclick = onClick;
+    }
+}
+
+// Placeholder distance calculator (replace with real ZIP-based logic)
+function calculateDistance(zip) {
+    return Math.floor(Math.random() * 250);
+}
 
 function register() {
     window.open('apply.html', '_blank');

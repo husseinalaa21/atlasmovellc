@@ -1942,3 +1942,145 @@ img.seach_bar {
     margin-right: 4px;
     font-size: 12px;
 }
+
+.load-item_2 {
+    border: 1px solid #e5e4e4;
+    border-radius: 10px;
+    margin: 10px 0;
+    padding: 15px;
+}
+.load-item_2:hover{
+    background-color: #f0f1f1;
+}
+
+.load-main_2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    gap: 15px;
+    width: 98%;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+
+.pickup_2, .delivery_2, .loaded-miles_2 {
+    flex: 1;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+.loaded-miles_2 {
+    text-align: center;
+    font-size: 16px;
+    color: #7d7f81;
+}
+
+.load-details_2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: #555;
+    padding-top: 8px;
+    border-top: 1px solid #eee;
+    width: 98%;
+    margin: auto;
+}
+
+/* Responsive (Mobile) */
+@media (max-width: 768px) {
+    .load-main_2 {
+        display: block;
+        text-align: left;
+    }
+
+    .loaded-miles_2 {
+        text-align: left;
+        margin: 8px 0;
+    }
+
+    .load-details_2 {
+        padding-top: 10px;
+    }
+}
+
+
+.load-details_2 {
+    font-size: 14px;
+    color: #555;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.details-action_2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.book-btn_2 {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 42px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.book-btn_2:hover {
+    background-color: #0056b3;
+}
+
+/* Mobile tweaks */
+@media (max-width: 768px) {
+    .details-action_2 {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .book-btn_2 {
+        width: 100%;
+    }
+}
+
+.load-more-btn_2 {
+    width: 100%;
+    display: block;
+    margin-top: 0;
+    padding: 20px;
+    background-color: #cccccc23;
+    color: rgb(99, 101, 106);
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 0 0 8px 8px;
+}
+
+.load-more-btn_2:hover {
+    background-color: #2b5eec;
+    color: whitesmoke;
+}
+
+.fade-out-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(to bottom, transparent, white);
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    opacity: 1;
+}
+
+.fade-out-overlay.hidden {
+    opacity: 0;
+}

@@ -232,3 +232,7 @@ function openlogin() {
 function register() {
     window.open('apply.html', '_blank');
 }
+
+function learnmore(){
+    window.open('about_us.html', '_blank');
+}

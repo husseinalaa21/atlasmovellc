@@ -355,11 +355,12 @@ img.bar_top {
 }
 
 .info-column_09 {
+    margin: 4px 40px;
     padding-right: 2rem;
 }
 
 .info-item_09 {
-    margin-top: 2.4rem;
+    margin-top: 1.2rem;
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -375,7 +376,7 @@ img.bar_top {
     background: #f9f9f9;
     padding: 2rem;
     border-radius: 8px;
-    margin: 40px;
+    margin: 20px;
 }
 
 .form-group_09 {

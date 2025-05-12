@@ -226,5 +226,9 @@ function haversineDistance(lat1, lon1, lat2, lon2) {
 }
 
 function openlogin() {
+    window.open('login.html', '_blank');
+}
+
+function register() {
     window.open('apply.html', '_blank');
 }

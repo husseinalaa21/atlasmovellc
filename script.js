@@ -26,6 +26,7 @@ function logomain() {
     window.open('/', '_self');
 }
 document.addEventListener('DOMContentLoaded', function () {
+    /*
     setTimeout(() => {
         const offerBanner = document.getElementById('offerBanner');
 
@@ -148,5 +149,5 @@ document.addEventListener('DOMContentLoaded', function () {
             offerBanner.style.display = 'none';
         });
 
-    }, 10000);
+    }, 10000);*/
 });

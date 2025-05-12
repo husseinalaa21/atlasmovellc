@@ -313,14 +313,16 @@ img.bar_top {
     color: #ffffff;
     width: 100%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    
+
     flex: 0 0 100%;
     position: relative;
     text-align: center;
 }
-.office_hours p{
+
+.office_hours p {
     width: 80%;
 }
+
 /* Optional: dark overlay for better text contrast */
 .pro_3::before {
     content: "";
@@ -428,7 +430,7 @@ img.bar_top {
     color: #ffffff;
     width: 100%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    
+
     flex: 0 0 100%;
     position: relative;
     text-align: center;
@@ -543,7 +545,7 @@ img.bar_top {
     min-height: 50vh;
     width: 100%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    
+
     flex: 0 0 100%;
     position: relative;
     text-align: center;
@@ -837,7 +839,7 @@ img.bar_top {
     min-height: 40vh;
     width: 100%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    
+
     flex: 0 0 100%;
     position: relative;
     text-align: center;
@@ -1035,7 +1037,7 @@ img.bar_top {
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
-    
+
     flex: 0 0 100%;
     position: relative;
     text-align: center;
@@ -1936,7 +1938,8 @@ img.seach_bar {
     width: 90%;
     margin: auto;
 }
-.dash_info h3 mark{
+
+.dash_info h3 mark {
     background-color: #007BFF;
     color: #fbf9f9;
     padding: 5px 10px;
@@ -1951,7 +1954,8 @@ img.seach_bar {
     margin: 10px 0;
     padding: 15px;
 }
-.load-item_2:hover{
+
+.load-item_2:hover {
     background-color: #f0f1f1;
 }
 
@@ -1967,7 +1971,9 @@ img.seach_bar {
 }
 
 
-.pickup_2, .delivery_2, .loaded-miles_2 {
+.pickup_2,
+.delivery_2,
+.loaded-miles_2 {
     flex: 1;
     font-size: 15px;
     line-height: 1.4;
@@ -2086,4 +2092,121 @@ img.seach_bar {
 
 .fade-out-overlay.hidden {
     opacity: 0;
+}
+
+.apply-form-wrapper {
+    width: 80%;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 20px;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.apply-h1 {
+    font-size: 28px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 12px;
+    color: var(--primary);
+}
+
+.apply-breadcrumb {
+    text-align: center;
+    font-size: 14px;
+    color: #64748b;
+    margin-bottom: 24px;
+}
+
+.apply-info-note {
+    font-size: 16px;
+    line-height: 1.7rem;
+    padding: 16px;
+    background-color: #eff6ff;
+    border-left: 4px solid var(--primary);
+    border-radius: 8px;
+    margin-bottom: 32px;
+}
+
+.apply-section-title {
+    font-size: 18px;
+    font-weight: 800;
+    margin: 32px 0 8px;
+    border-bottom: 1px solid var(--gray);
+    padding-bottom: 4px;
+    color: var(--primary);
+    text-align: center;
+    color: #393a3c;
+}
+
+.apply-label {
+    font-weight: 500;
+    margin-top: 20px;
+    display: block;
+    margin-bottom: 2px;
+    margin-left: 6px;
+}
+
+.apply-input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.apply-input {
+    padding: 14px 14px 14px 14px;
+    /* Space for the icon */
+    width: 100%;
+    font-size: 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    background-color: #f9fafb;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.apply-input:focus {
+    border-color: var(--primary);
+    background-color: #fff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.15);
+}
+
+.apply-input-icon {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 15px;
+    color: #aaa;
+}
+
+.apply-submit-btn {
+    margin-top: 40px;
+    padding: 14px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.apply-submit-btn:hover {
+    background-color: #1d4ed8;
+}
+
+.submit_succ {
+    background-color: rgb(25, 111, 113);
+    padding: 20px;
+    margin: 20px 10px;
+    color: whitesmoke;
+}
+.faild_app {
+    background-color: rgb(177, 28, 28);
+    padding: 20px;
+    margin: 20px 10px;
+    color: whitesmoke;
 }

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="./icon.png">
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="handheldFriendly" content="true">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_2.css">
+    <meta name="description"
+        content="Apply to join Atlas Move LLC — a trusted name in logistics and transportation. We're looking for dedicated drivers to help us deliver excellence in freight and factory goods across the region. Join a team that values reliability, efficiency, and professional growth.">
+    <title>Atlas Move LLC - Documents and agrement</title>
+
+    <!-- Open Graph Meta Tags (for Facebook and LinkedIn) -->
+    <meta property="og:title" content="Atlas Move LLC - Driver Registration">
+    <meta property="og:description"
+        content="Join Atlas Move LLC as a driver and become part of a professional logistics and transportation team.">
+    <meta property="og:image" content="https://www.atlasmovellc.com/atlasmovellc_2.jpg">
+    <meta property="og:image:alt" content="Atlas Move LLC Cover Image">
+    <meta property="og:url" content="https://www.atlasmovellc.com/apply">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Atlas Move LLC">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Atlas Move LLC - Driver Registration">
+    <meta name="twitter:description"
+        content="Join Atlas Move LLC as a driver and become part of a professional logistics and transportation team.">
+    <meta name="twitter:image" content="https://www.atlasmovellc.com/atlasmovellc_2.jpg">
+    <meta name="twitter:image:alt" content="Atlas Move LLC Cover Image">
+    <meta name="twitter:site" content="@AtlasMoveLLC">
+
+    <!-- LinkedIn Meta Tags -->
+    <meta name="linkedin:title" content="Atlas Move LLC - Driver Registration">
+    <meta name="linkedin:description"
+        content="Join Atlas Move LLC as a driver and become part of a professional logistics and transportation team.">
+    <meta name="linkedin:image" content="https://www.atlasmovellc.com/atlasmovellc_2.jpg">
+
+    <!-- CALENDER LINKS STYLE BY HUSSEIN -->
+    <!-- Flatpickr CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+    <!-- Flatpickr Theme (to customize colors later) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/material_blue.css">
+
+    <!-- Flatpickr JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-29G4T0K3PJ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-29G4T0K3PJ');
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body id="smart">
+    <!-- BACKGROUND -->
+    <div class="pro_3">
+        <div class="pro_3_x">
+            <div class="header">
+                <div class="logo" onclick="logomain()">
+                    <img src="./logo.png" alt="Main Logo" width="62px">
+                </div>
+                <div class="tools">
+                    <div class="login_but" onclick="openlogin()"> LOGIN </div>
+                    <div onclick="menu_togg()">
+                        <img src="./bars-solid.svg" class="bar_top" alt="Menu" width="23px">
+                    </div>
+                </div>
+            </div>
+            <!-- Side Menu -->
+            <div id="sideMenu" style="display: none;">
+                <div class="inside_menu">
+                    <div class="menu_content">
+                        <div class="menu_wrapper">
+                            <!-- Main Menu Sections -->
+                            <div class="menu_main">
+                                <nav class="menu_group">
+                                    <h3 class="menu_title">Quick Links</h3>
+                                    <div class="menu_links">
+                                        <a href="/" class="menu_link">
+                                            Home
+                                        </a>
+                                        <a href="/about_us.html" class="menu_link">
+                                            About Us
+                                        </a>
+                                        <a href="/privacy.html" class="menu_link">
+                                            Privacy
+                                        </a>
+                                        <a href="/support.html" class="menu_link">
+                                            Support
+                                        </a>
+                                        <a href="/contact_us.html" class="menu_link">
+                                            Contact Us
+                                        </a>
+                                    </div>
+                                </nav>
+
+                                <div class="menu_group">
+                                    <h3 class="menu_title">Account Actions</h3>
+                                    <div class="menu_actions">
+                                        <a href="/login.html" class="action_btn primary">
+                                            <i class="fas fa-sign-in-alt"></i>
+                                            Driver Login
+                                        </a>
+                                        <a href="/apply.html" class="action_btn secondary">
+                                            <i class="fas fa-user-plus"></i>
+                                            Register Now
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Contact Information -->
+                            <div class="contact_info">
+                                <h3 class="menu_title">Contact Details</h3>
+                                <div class="contact_item">
+                                    <i class="fas fa-phone"></i>
+                                    <strong>Phone:</strong>
+                                    <a href="tel:+15867826223">+1 (586) 782-6223</a>
+                                </div>
+                                <div class="contact_item">
+                                    <i class="fas fa-envelope"></i>
+                                    <strong>Email:</strong>
+                                    <a href="mailto:office@atlasmovellc.com">office@atlasmovellc.com</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="subscribe">
+                            <div id="subscribeMessage" class="subscribe-message"></div>
+                            <h3>Subscribe to Receive Industry Updates</h3>
+                            <form class="subscribe_form" id="subscribeForm">
+                                <label for="email_input">Email Address <span class="required">(Optional)</span></label>
+                                <input type="email" id="email_input" name="email" placeholder="Enter your email address"
+                                    required>
+                                <button type="submit">Subscribe</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="blink_click" onclick="menu_togg()"><img src="./xmark-solid.svg" class="blue_x"
+                            width="30px" alt=""></div>
+                </div>
+            </div>
+
+            <div class="front-wrapper">
+                <div class="front">
+                    <!-- Section A -->
+                    <div class="a">
+                        <div class="informations apply_top_head">
+                            <h3>ATLAS MOVE LLC</h3>
+                            <h2> Application - Driver Registration </h2>
+                        </div>
+                        <p> Application ID#1212312 </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- MODERN DRIVER REGISTRATION SECTION -->
+    <div class="registration-container">
+        <!-- DRIVER INFORMATION CARD -->
+        <div class="registration-card" id="driver-info">
+            <h2 class="section-title">
+                <i class="icon-user"></i> Driver Information
+            </h2>
+
+            <div class="form-grid">
+                <div class="input-group">
+                    <label for="fullName">Full Legal Name</label>
+                    <input type="text" id="fullName" class="modern-input" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" id="dob" class="modern-input" required>
+                </div>
+
+                <div class="input-group full-width">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" class="modern-input" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="licenseNumber">Driver License Number</label>
+                    <input type="text" id="licenseNumber" class="modern-input" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="issueDate">License Issue Date</label>
+                    <input type="date" id="issueDate" class="modern-input" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="expiryDate">License Expiration</label>
+                    <input type="date" id="expiryDate" class="modern-input" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="licenseClass">License Class</label>
+                    <select id="licenseClass" class="modern-select" required>
+                        <option value="">Select</option>
+                        <option value="A">Class A</option>
+                        <option value="B">Class B</option>
+                        <option value="C">Class C</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="ssn">Last 4 SSN</label>
+                    <input type="password" id="ssn" maxlength="4" class="modern-input" required>
+                </div>
+
+                <div class="input-group radio-group">
+                    <label>Accidents in last 6 months?</label>
+                    <div class="radio-options">
+                        <label><input type="radio" name="accidents" id="accidentYes" value="Yes"> Yes</label>
+                        <label><input type="radio" name="accidents" id="accidentNo" value="No"> No</label>
+                    </div>
+                </div>
+
+                <div class="input-group radio-group">
+                    <label>Violations in last 6 months?</label>
+                    <div class="radio-options">
+                        <label><input type="radio" name="violations" id="violationYes" value="Yes"> Yes</label>
+                        <label><input type="radio" name="violations" id="violationNo" value="No"> No</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- VEHICLE INFORMATION CARD -->
+        <div class="registration-card" id="vehicle-info">
+            <h2 class="section-title">
+                <i class="icon-car"></i> Vehicle Information
+            </h2>
+
+            <div class="form-grid">
+                <div class="input-group">
+                    <!-- Car Info Section -->
+                    <label for="carMake">Car Make</label>
+                    <input type="text" id="carMake" name="carMake" />
+
+                    <label for="carModel">Car Model</label>
+                    <input type="text" id="carModel" name="carModel" />
+
+                    <label for="carYear">Car Year</label>
+                    <input type="text" id="carYear" name="carYear" />
+
+                    <label for="carLicensePlate">Car License Plate</label>
+                    <input type="text" id="carLicensePlate" name="carLicensePlate" />
+                </div>
+            </div>
+        </div>
+
+        <!-- TERMS & AGREEMENT CARD -->
+        <div class="registration-card agreement-card" id="terms-section">
+            <h2 class="section-title">
+                <i class="icon-document"></i> Terms & Conditions
+            </h2>
+
+            <div class="terms-container">
+                <div class="terms-content">
+                    <div id="terms" class="terms">
+                        <h3>1. Introduction</h3>
+                        <p>This Agreement governs your use of our transportation services. By proceeding, you agree to
+                            comply with all terms outlined herein.</p>
+
+                        <h3>2. Eligibility Requirements</h3>
+                        <p>You must be at least 21 years of age with a valid driver's license to operate under our
+                            platform.
+                        </p>
+
+                        <h3>3. Driver Responsibilities</h3>
+                        <p>You agree to maintain proper documentation and adhere to all traffic laws while representing
+                            our
+                            company.</p>
+
+                        <h3>4. Data Privacy</h3>
+                        <p>We collect necessary information for compliance purposes only, as detailed in our Privacy
+                            Policy.
+                        </p>
+                    </div>
+                    <div class="signature-section">
+                        <div class="signature-field">
+                            <label for="signatoryName">Full Name</label>
+                            <input type="text" id="signatoryName" class="signature-input" required>
+                        </div>
+
+                        <div class="signature-field">
+                            <label for="agreementDate">Date</label>
+                            <input type="date" id="agreementDate" class="signature-input" required>
+                        </div>
+
+                        <!-- Signature Pad Added Below -->
+                        <div id="signature-pad" class="signature-pad">
+                            <label>Signature</label>
+                            <canvas id="signatureCanvas" width="400" height="150"></canvas>
+                            <button type="button" id="clearSignature" class="btn-secondary">Clear Signature</button>
+                        </div>
+
+                        <div class="agreement-checkbox">
+                            <input type="checkbox" id="termsAgreement" required>
+                            <label for="termsAgreement">I acknowledge that I have read and agree to these terms</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SUBMISSION SECTION -->
+        <div id="error_ms">
+
+        </div>
+        <div class="action-bar">
+            <button class="btn-primary" id="submitApplication">
+                <i class="icon-send"></i> Submit Application
+            </button>
+        </div>
+    </div>
+
+
+    <!-- PDF GENERATION MODAL (HIDDEN) -->
+    <div class="modal pdf-modal" style="display:none;">
+        <div class="modal-content">
+            <h3>Application Review</h3>
+            <p>Your application is being processed. A PDF copy will be generated for your records.</p>
+            <div class="modal-actions">
+                <button class="btn-secondary modal-cancel">Close</button>
+                <button class="btn-primary modal-confirm">Download PDF</button>
+            </div>
+        </div>
+    </div>
+    <script src="doc.js"></script>
+    <!-- END WRITE CODE IN HERE -->
+
+    <div class="end">
+        <div class="solid_title">
+            <div class="st_title">
+                <div class="logo_l">
+                    <img src="./logo.png" width="90px" alt="">
+                </div>
+                <div>
+                    <h1> ATLAS MOVE, LLC </h1>
+                    <h3> Logistics & Transportation Company</h3>
+                </div>
+            </div>
+            <div class="contact_info buttom_line">
+                <div> <img src="phone-solid.svg" width="20px" alt=""> &nbsp; &nbsp; <p>+1 (586) 782-6223</p>
+                </div>
+                <div> <img src="envelope-solid.svg" width="20px" alt=""> &nbsp; &nbsp; <p>office@atlasmovellc.com</p>
+                </div>
+            </div>
+            <div class="map_section">
+                <h2><img src="map-location-solid.svg" width="20px" alt=""> &nbsp; Our Office Location</h2>
+                <p><strong>100 W Big Beaver Road, Suite 200, Troy, MI 48084</strong></p>
+                <div class="map_container">
+                    <iframe
+                        src="https://www.google.com/maps?q=100+W+Big+Beaver+Road,+Suite+200,+Troy,+MI+48084&output=embed"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+
+        </div>
+        <div class="end_rec">
+            <div class="list_options">
+                <a href="/about_us.html"> About US </a>
+                <a href="/privacy.html"> Privacy </a>
+                <a href="/contact_us.html"> Contact US </a>
+                <a href="/support.html"> Support </a>
+            </div>
+            <div class="login_signup_but">
+                <div class="a_b" onclick="openlogin()"> DRIVER LOGIN</div>
+                <div class="b_b" onclick="register()"> JOIN US </div>
+            </div>
+        </div>
+        <div class="copyright">
+            All Rights Reserved © Atlas Move, LLC
+        </div>
+    </div>
+    <script src="doc.js"></script>
+    <script src="script.js"></script>
+    <script src="subscribe.js"></script>
+</body>
+
+</html>

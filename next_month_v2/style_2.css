@@ -1,0 +1,258 @@
+/* BASE STYLES */
+:root {
+  --primary-color: #2563eb;
+  --secondary-color: #1e40af;
+  --background-color: #f8fafc;
+  --text-color: #1e293b;
+  --border-color: #cbd5e1;
+  --error-color: #dc2626;
+  --success-color: #16a34a;
+}
+
+/* REGISTRATION CONTAINER */
+.registration-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 2rem;
+}
+
+/* CARDS */
+.registration-card {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-color);
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--primary-color);
+}
+
+/* FORM ELEMENTS */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-group.full-width {
+  grid-column: 1 / -1;
+}
+
+label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #64748b;
+}
+
+.modern-input {
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.modern-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.modern-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1em;
+}
+
+/* SIGNATURE SECTION */
+.signature-section {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 2px solid var(--border-color);
+}
+
+.signature-field {
+  margin-bottom: 1.5rem;
+}
+
+.signature-pad {
+  border: 2px dashed var(--border-color);
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+  position: relative;
+}
+
+#signatureCanvas {
+  width: 100%;
+  height: 150px;
+  cursor: crosshair;
+}
+
+.clear-signature {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.875rem;
+  background: var(--background-color);
+  border: 1px solid var(--border-color);
+  border-radius: 0.375rem;
+}
+
+/* RADIO BUTTONS */
+.radio-group {
+  padding: 1rem;
+  background: #f1f5f9;
+  border-radius: 0.5rem;
+}
+
+.radio-options {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.radio-options label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* BUTTONS */
+.action-bar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: var(--secondary-color);
+}
+
+.btn-secondary {
+  background: white;
+  color: var(--primary-color);
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--primary-color);
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background: #eff6ff;
+}
+
+/* VALIDATION STATES */
+.invalid {
+  border-color: var(--error-color) !important;
+  background: #fee2e2;
+}
+
+.invalid label {
+  color: var(--error-color);
+}
+
+.agreement-checkbox {
+  margin-top: 2rem;
+  display: flex;
+  gap: 0.75rem;
+}
+
+/* MODAL */
+.pdf-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  max-width: 500px;
+  width: 90%;
+}
+
+.modal-actions {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+/* ICONS */
+@font-face {
+  font-family: 'icons';
+  src: url('path/to/icons.woff2') format('woff2');
+}
+
+.icon-user::before { content: "👤"; }
+.icon-car::before { content: "🚗"; }
+.icon-document::before { content: "📄"; }
+.icon-save::before { content: "💾"; }
+.icon-send::before { content: "✉️"; }
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .registration-card {
+    padding: 1.5rem;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .action-bar {
+    flex-direction: column;
+  }
+  
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+#signatureCanvas {
+    width: 100%; /* Or specific dimensions */
+    height: 200px; /* Or specific dimensions */
+}

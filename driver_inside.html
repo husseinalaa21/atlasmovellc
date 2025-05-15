@@ -13,9 +13,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="handheldFriendly" content="true">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_driver.css">
     <meta name="description"
-        content="Log in to your Atlas Move account to manage your logistics and transportation services, track shipments, and access account details.">
-    <title>Atlas Move LLC - Login</title>
+        content="Apply to join Atlas Move LLC — a trusted name in logistics and transportation. We're looking for dedicated drivers to help us deliver excellence in freight and factory goods across the region. Join a team that values reliability, efficiency, and professional growth.">
+    <title>Atlas Move LLC - Driver Registration</title>
+
+    <!-- Open Graph Meta Tags (for Facebook and LinkedIn) -->
+    <meta property="og:title" content="Atlas Move LLC - Driver Registration">
+    <meta property="og:description"
+        content="Join Atlas Move LLC as a driver and become part of a professional logistics and transportation team.">
+    <meta property="og:image" content="https://www.atlasmovellc.com/atlasmovellc_2.jpg">
+    <meta property="og:image:alt" content="Atlas Move LLC Cover Image">
+    <meta property="og:url" content="https://www.atlasmovellc.com/apply">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Atlas Move LLC">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Atlas Move LLC - Driver Registration">
+    <meta name="twitter:description"
+        content="Join Atlas Move LLC as a driver and become part of a professional logistics and transportation team.">
+    <meta name="twitter:image" content="https://www.atlasmovellc.com/atlasmovellc_2.jpg">
+    <meta name="twitter:image:alt" content="Atlas Move LLC Cover Image">
+    <meta name="twitter:site" content="@AtlasMoveLLC">
+
+    <!-- LinkedIn Meta Tags -->
+    <meta name="linkedin:title" content="Atlas Move LLC - Driver Registration">
+    <meta name="linkedin:description"
+        content="Join Atlas Move LLC as a driver and become part of a professional logistics and transportation team.">
+    <meta name="linkedin:image" content="https://www.atlasmovellc.com/atlasmovellc_2.jpg">
 
     <!-- CALENDER LINKS STYLE BY HUSSEIN -->
     <!-- Flatpickr CSS -->
@@ -41,20 +67,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-</head>
 
+</head>
 
 <body id="smart">
     <!-- BACKGROUND -->
-    <div class="pro_6">
-        <div class="pro_6_x">
-            <div class="header header_">
+    <div class="pro_inside">
+        <div class="pro_inside_x">
+            <div class="header">
                 <div class="logo" onclick="logomain()">
                     <img src="./logo.png" alt="Main Logo" width="62px">
                 </div>
                 <div class="tools">
+                    <div class="acc_b" onclick="menu_togg()"> ACCOUNT </div>
                     <div onclick="menu_togg()">
-                        <img src="./bars-solid.svg" class="bar_inside" alt="Menu" width="23px">
+                        <img src="./bars-solid.svg" class="bar_top" alt="Menu" width="23px">
                     </div>
                 </div>
             </div>
@@ -65,41 +92,36 @@
                         <div class="menu_wrapper">
                             <!-- Main Menu Sections -->
                             <div class="menu_main">
+                                <div class="menu_group">
+                                    <h3 class="menu_title">Account Actions</h3>
+                                    <div class="menu_actions">
+                                        <div class="action_btn primary" onclick="logout()">
+                                            <i class="fas fa-sign-in-alt"></i>
+                                            Logout
+                                        </div>
+                                    </div>
+                                </div>
+
                                 <nav class="menu_group">
                                     <h3 class="menu_title">Quick Links</h3>
                                     <div class="menu_links">
+                                        <a href="/" class="menu_link">
+                                            Home
+                                        </a>
                                         <a href="/about_us.html" class="menu_link">
-                                            <i class="fas fa-info-circle"></i>
                                             About Us
                                         </a>
                                         <a href="/privacy.html" class="menu_link">
-                                            <i class="fas fa-shield-alt"></i>
                                             Privacy
                                         </a>
                                         <a href="/support.html" class="menu_link">
-                                            <i class="fas fa-life-ring"></i>
                                             Support
                                         </a>
                                         <a href="/contact_us.html" class="menu_link">
-                                            <i class="fas fa-envelope"></i>
                                             Contact Us
                                         </a>
                                     </div>
                                 </nav>
-
-                                <div class="menu_group">
-                                    <h3 class="menu_title">Account Actions</h3>
-                                    <div class="menu_actions">
-                                        <a href="/login.html" class="action_btn primary">
-                                            <i class="fas fa-sign-in-alt"></i>
-                                            Driver Login
-                                        </a>
-                                        <a href="/apply.html" class="action_btn secondary">
-                                            <i class="fas fa-user-plus"></i>
-                                            Register Now
-                                        </a>
-                                    </div>
-                                </div>
                             </div>
 
                             <!-- Contact Information -->
@@ -138,7 +160,9 @@
                 <div class="front">
                     <!-- Section A -->
                     <div class="a">
-                        <div class="informations">
+                        <div class="informations apply_top_head">
+                            <h3>ATLAS'S HOME</h3>
+                            <h2 id="yourname_09"> .... </h2>
                         </div>
                     </div>
                 </div>
@@ -147,30 +171,75 @@
     </div>
     <!-- TOP DONE -->
 
-    <div class="login-container_011">
-        <h2 class="login-title_011">Atlas Move Driver Login</h2>
-        <form id="loginForm_011">
-            <label for="text" class="login-label_011">Username</label>
-            <input type="text" id="username" name="username" class="login-input_011" placeholder="Your Username"
-                required />
-
-            <label for="password" class="login-label_011">Password</label>
-            <input type="password" id="password" name="password" class="login-input_011"
-                placeholder="Enter your password" required />
-
-            <button type="submit" class="login-button_011">Login</button>
-        </form>
-        <div class="footer-text_011">
-            Don't have an account? <a href="/apply.html"
-                style="color: #007BFF; text-decoration: none; font-weight: 600;">Register now</a>
+    <div class="messaegs">
+        <div class="messages_title">
+            <div><i class="fas fa-envelope"></i> &nbsp; Mail Box ▼</div>
         </div>
-        <div class="error-message_011" id="errorMsg_011"></div>
-        <div class="success-message_011" id="successMsg_011"></div>
-        <div class="footer-text_011">
-            Need help? Contact support@atlasmovellc.com
+
+        <div class="messaegs_container_wrapper" style="display: none;">
+            <div class="note_msms">
+                <i class="fas fa-lock"></i> &nbsp; Only you and Atlas Move, LLC can see these messages.
+            </div>
+            <div class="messaegs_container" id="messagesBox">
+                <!-- Example messages -->
+            </div>
+
+            <div class="messaegs_button">
+                <input type="text" id="messageInput" placeholder="Type a message" />
+                <button id="sendMsgBtn">➤</button>
+            </div>
         </div>
     </div>
 
+    <!-- DASH --><!-- DASH -->
+    <div class="middle_5">
+        <div class="dashboard_5">
+            <div class="dash_info_5">
+                <h2>Find a load based on your location</h2>
+                <div class="search-bar_5">
+                    <form id="search-form">
+                        <div class="s_5 c_5">
+                            <div>
+                                <p>Pick Up Address</p>
+                                <input type="text" name="location" placeholder="City, State, or ZIP Code">
+                            </div>
+                            <div>
+                                <p>Pick Up Date</p>
+                                <input type="text" id="pickupDate" name="pickupDate" placeholder="Pick Up Date"
+                                    required>
+                            </div>
+                        </div>
+                        <div class="s_5">
+                            <div>
+                                <p>Select Radius</p>
+                                <select name="radius" class="radio_5">
+                                    <option value="50">50 miles</option>
+                                    <option value="100" selected>100 miles</option>
+                                    <option value="200">200 miles</option>
+                                    <option value="300">300 miles</option>
+                                    <option value="400">400 miles</option>
+                                </select>
+                            </div>
+                            <button type="submit">
+                                <img src="./magnifying-glass-solid.svg" class="seach_bar_5" width="20px" alt="">
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div id="load-container-wrapper" style="position: relative;">
+                <div id="got-load"></div>
+                <div id="load-container_bids"></div>
+                <div id="load-container"></div>
+                <div id="fade-out" class="fade-out-overlay_5"></div>
+            </div>
+            <button id="load-more-btn" class="load-more-btn_2">Load More</button>
+        </div>
+    </div>
+
+
+    <!-- END -->
     <div class="end">
         <div class="solid_title">
             <div class="st_title">
@@ -181,15 +250,6 @@
                     <h1> ATLAS MOVE, LLC </h1>
                     <h3> Logistics & Transportation Company</h3>
                 </div>
-            </div>
-            <div class="subscribe">
-                <div id="subscribeMessage" class="subscribe-message"></div>
-                <h3>Subscribe to Receive Industry Updates</h3>
-                <form class="subscribe_form" id="subscribeForm">
-                    <label for="email_input">Email Address <span class="required">(Optional)</span></label>
-                    <input type="email" id="email_input" name="email" placeholder="Enter your email address" required>
-                    <button type="submit">Subscribe</button>
-                </form>
             </div>
             <div class="contact_info buttom_line">
                 <div> <img src="phone-solid.svg" width="20px" alt=""> &nbsp; &nbsp; <p>+1 (586) 782-6223</p>
@@ -225,9 +285,9 @@
             All Rights Reserved © Atlas Move, LLC
         </div>
     </div>
-    <script src="login.js"></script>
     <script src="script.js"></script>
     <script src="subscribe.js"></script>
+    <script src="main_inside.js"></script>
 </body>
 
 </html>

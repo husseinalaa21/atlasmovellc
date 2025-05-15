@@ -15,14 +15,14 @@ async function autoLoginIfCookiesExist() {
 
     if (username && password) {
         try {
-            const response = await fetch(`${serverURL}/user_login`, {
+            const response = await fetch(`${serverURL}/admin_login`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username, password }),
             });
 
             if (response.ok) {
-                window.location.href = '/driver_inside.html';
+                window.location.href = '/admin_inside.html';
             } else {
                 // Clear invalid cookies
                 document.cookie = 'username=; path=/; max-age=0';
@@ -48,7 +48,7 @@ document.getElementById('loginForm_011').addEventListener('submit', async functi
     successMsg.textContent = '';
 
     try {
-        const response = await fetch(`${serverURL}/user_login`, {
+        const response = await fetch(`${serverURL}/admin_login`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ username, password }),
@@ -61,7 +61,7 @@ document.getElementById('loginForm_011').addEventListener('submit', async functi
             document.cookie = `password=${encodeURIComponent(password)}; path=/; max-age=${7 * 24 * 60 * 60}`;
 
             setTimeout(() => {
-                window.location.href = '/driver_inside.html';
+                window.location.href = '/admin_inside.html';
             }, 1500);
         } else {
             // Delete cookies if login failed

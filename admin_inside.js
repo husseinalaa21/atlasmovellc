@@ -67,12 +67,12 @@ document.addEventListener("DOMContentLoaded", async function () {
                 userDiv.classList.add('user-section');
                 userDiv.className = "driver_con"
                 userDiv.innerHTML = `
-                    <strong>Username:</strong> ${user.username}<br/>
+                    <h2> ${user.username}</h2><br/>
                     <strong>Email:</strong> ${user.email || 'N/A'}<br/>
                     <strong>Phone:</strong> ${user.phone || 'N/A'}<br/>
                     <strong>Zip Code:</strong> ${user.zip_code || 'N/A'}<br/>
                     <strong>User ID:</strong> ${user._id}<br/><br/>
-                    <strong>Bids:</strong><br/>
+                    <h3>Bids:</h3><br/>
                     ${Array.isArray(user.bids) && user.bids.length > 0
                         ? user.bids.map(bid => {
                             const load = bid.loadDetails || {};
@@ -98,31 +98,51 @@ document.addEventListener("DOMContentLoaded", async function () {
             <strong>Size:</strong> ${load.size || 'N/A'}<br/>
 
             <div class="admin_action">
-                <div onclick='thisUserBidPending({ userid: "${user.username}", userbid_id: "${userbidid}" })'>
-                  ${bid.pending ? "It's Pending" : "Set Pending"}
-                </div>
-                <div onclick='thisUserBidConfirm({ userid: "${user.username}", userbid_id: "${userbidid}" })'>
-                  ${bid.got ? "It's Confirmed" : "Set Confirm"}
-                </div>
+<div
+  id="${user.username + "_" + userbidid + "_pen"}"
+  style="background: ${bid.pending ? 'green': '#ccc' };"
+  onclick='thisUserBidPending({ userid: "${user.username}", userbid_id: "${userbidid}" })'
+>
+  Pending
+</div>
+
+<div
+  id="${user.username + "_" + userbidid + "_con"}"
+  style="background: ${bid.got ? 'green': '#ccc' };"
+  onclick='thisUserBidConfirm({ userid: "${user.username}", userbid_id: "${userbidid}" })'
+>
+  Confirm
+</div>
+
             </div>
         </div>
+        <div id="${user.username+"_m_"+userbidid}"></div>
       `;
                         }).join('')
                         : '<i>No loads found</i><br/><hr/>'}
 
 <br/>
                     <strong>Messages:</strong><br/>
-                    ${Array.isArray(user.messages) && user.messages.length > 0
-                        ? user.messages.map(msg => {
-                            const messageText = typeof msg === 'object' ? (msg.message || msg.text || JSON.stringify(msg)) : msg;
-                            const messageDate = msg.createdAt || msg.date;
-                            return `
+                   <strong>Messages:</strong><br/>
+${Array.isArray(user.messages) && user.messages.length > 0
+  ? user.messages.map(msg => {
+      const messageText = typeof msg === 'object' ? (msg.message || msg.text || JSON.stringify(msg)) : msg;
+      const messageDate = msg.createdAt || msg.date;
+      return `
         <div class="message-entry">
             ${messageDate ? new Date(messageDate).toLocaleString() : 'N/A'} - ${messageText}<br/>
         </div>
       `;
-                        }).join('')
-                        : '<i>No messages</i><br/><hr/>'}
+    }).join('')
+  : '<i>No messages</i><br/>'}
+<hr/>
+
+<!-- Message input section -->
+<div class="send-message-section" style="margin-top: 10px;">
+  <input type="text" id="message_input_${user.username}" placeholder="Write a message..." style="width: 70%;" />
+  <button onclick="sendMessageToUser('${user.username}')" style="padding: 5px 10px;">Send</button>
+</div>
+
 <br/><hr/>
                 `;
                 usersList.appendChild(userDiv);
@@ -138,58 +158,105 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
 });
 
+async function sendMessageToUser(username) {
+    const inputId = `message_input_${username}`;
+    const message = document.getElementById(inputId).value.trim();
+    if (!message) {
+        console.log("Message cannot be empty.");
+        return;
+    }
+
+    const adminUsername = getCookie('username');
+    const adminPassword = getCookie('password');
+
+    if (!adminUsername || !adminPassword) {
+        console.log("Not authenticated.");
+        return;
+    }
+
+    try {
+        const response = await fetch(`${serverURL}/admin_send_message`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                username: adminUsername,
+                password: adminPassword,
+                toUser: username,
+                message
+            })
+        });
+
+        const result = await response.json();
+        if (response.ok) {
+            console.log(`Message sent: ${result.message}`);
+            location.reload(); // Optional: Refresh to show new message
+        } else {
+            console.log(`Failed to send message: ${result.error || 'Unknown error'}`);
+        }
+    } catch (error) {
+        console.error('Error sending message:', error);
+    }
+}
 
 
 async function thisUserBidPending({ userid, userbid_id }) {
-  const username = getCookie('username');
-  const password = getCookie('password');
-  if (!username || !password) {
-    alert('Not authenticated.');
-    return;
-  }
-
-  try {
-    const response = await fetch(`${serverURL}/admin_toggle_pending`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ userid, userbid_id, username, password }),
-    });
-    const result = await response.json();
-    if (response.ok) {
-      alert(`Pending status updated: ${result.message || 'Success'}`);
-      location.reload();
-    } else {
-      alert(`Failed to update pending status: ${result.error || 'Unknown error'}`);
+    const username = getCookie('username');
+    const password = getCookie('password');
+    if (!username || !password) {
+        document.getElementById(userid + "_m_" + userbid_id).innerText ='Not authenticated.';
+        return;
     }
-  } catch (error) {
-    console.error('Error toggling pending:', error);
-    alert('Network error toggling pending status.');
-  }
+
+    try {
+        const response = await fetch(`${serverURL}/admin_toggle_pending`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ userid, userbid_id, username, password }),
+        });
+        const result = await response.json();
+        if (response.ok) {
+            const el = document.getElementById(userid + "_" + userbid_id + "_pen");
+            if (el) el.style.background = result.status ? "green" : "#ccc";
+
+            document.getElementById(userid + "_m_" + userbid_id).innerText = `Pending status updated: ${result.message || 'Success'}`;
+            // Optionally reload or update UI dynamically here
+            // location.reload();
+        } else {
+            document.getElementById(userid + "_m_" + userbid_id).innerText = `Failed to update pending status: ${result.error || 'Unknown error'}`;
+        }
+    } catch (error) {
+        document.getElementById(userid + "_m_" + userbid_id).innerText = 'Error toggling pending:'+ error;
+        document.getElementById(userid + "_m_" + userbid_id).innerText ='Network error toggling pending status.';
+    }
 }
 
 async function thisUserBidConfirm({ userid, userbid_id }) {
-  const username = getCookie('username');
-  const password = getCookie('password');
-  if (!username || !password) {
-    alert('Not authenticated.');
-    return;
-  }
-
-  try {
-    const response = await fetch(`${serverURL}/admin_toggle_confirm`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ userid, userbid_id, username, password }),
-    });
-    const result = await response.json();
-    if (response.ok) {
-      alert(`Confirm status updated: ${result.message || 'Success'}`);
-      location.reload();
-    } else {
-      alert(`Failed to update confirm status: ${result.error || 'Unknown error'}`);
+    const username = getCookie('username');
+    const password = getCookie('password');
+    if (!username || !password) {
+        document.getElementById(userid + "_m_" + userbid_id).innerText ='Not authenticated.';
+        return;
     }
-  } catch (error) {
-    console.error('Error toggling confirm:', error);
-    alert('Network error toggling confirm status.');
-  }
+
+    try {
+        const response = await fetch(`${serverURL}/admin_toggle_confirm`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ userid, userbid_id, username, password }),
+        });
+        const result = await response.json();
+        if (response.ok) {
+            const el = document.getElementById(userid + "_" + userbid_id + "_con");
+            if (el) el.style.background = result.status ? "green" : "#ccc";
+
+            document.getElementById(userid + "_m_" + userbid_id).innerText = `Confirm status updated: ${result.message || 'Success'}`;;
+            // Optionally reload or update UI dynamically here
+            // location.reload();
+        } else {
+            document.getElementById(userid + "_m_" + userbid_id).innerText = `Failed to update confirm status: ${result.error || 'Unknown error'}`;
+        }
+    } catch (error) {
+        document.getElementById(userid + "_m_" + userbid_id).innerText = 'Error toggling confirm:'+ error;
+        document.getElementById(userid + "_m_" + userbid_id).innerText ='Network error toggling confirm status.';
+    }
 }

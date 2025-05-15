@@ -396,9 +396,9 @@ html {
     max-width: 200px;
     margin: 3px 16px;
     border-radius: 10px 10px 10px 2px;
-    background-color: #007bff;
+    background-color: #3284e1;
     color: #fff;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     padding: 12px !important;
 }
@@ -482,4 +482,35 @@ html {
     padding: 20px;
     margin: 10px;
     margin-bottom: 20px;
+}
+
+.driver_con h2{
+    font-size: 23px;
+    text-align: center;
+}
+
+.admin_action {
+    margin-top: 20px;
+}
+.admin_action div {
+    margin: 10px auto;
+    padding: 13px;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 10px;
+    color: whitesmoke;
+}
+
+.driver_con h3{
+    text-align: center;
+    font-size: 20px;
+    padding: 0;
+    margin: 0;
+    margin-top: 10px;
+}
+.load-entry {
+    padding: 13px;
+    background-color: #075e5417;
+    margin-bottom: 10px;
+    border-radius: 10px;
 }

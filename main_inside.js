@@ -752,4 +752,4 @@ input.addEventListener('keydown', (e) => {
 
 // Initial load and 60-sec interval refresh
 refresh();
-setInterval(refresh, 60000)
+setInterval(refresh, 1000)

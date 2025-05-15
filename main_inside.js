@@ -750,6 +750,37 @@ input.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') sendMessage(input.value);
 });
 
-// Initial load and 60-sec interval refresh
-refresh();
-setInterval(refresh, 1000)
+function refreshMessages(params) {
+    refresh();  // Refresh messages and loads
+}
+
+async function refreshLoads() {
+    await load_update()
+}
+
+function getMyZipCode() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(async function (position) {
+            const lat = position.coords.latitude;
+            const lon = position.coords.longitude;
+
+            try {
+                const response = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`);
+                const data = await response.json();
+                const zip = data.address.postcode || '';
+                if (zip) {
+                    document.getElementById('pickupAddress').value = zip;
+                } else {
+                    alert('ZIP code not found for your location.');
+                }
+            } catch (error) {
+                console.error('Error fetching ZIP code:', error);
+                alert('Could not retrieve ZIP code.');
+            }
+        }, function (error) {
+            alert('Geolocation failed or was denied.');
+        });
+    } else {
+        alert('Geolocation is not supported by this browser.');
+    }
+}

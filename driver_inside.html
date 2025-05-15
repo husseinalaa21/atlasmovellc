@@ -180,6 +180,9 @@
             <div class="note_msms">
                 <i class="fas fa-lock"></i> &nbsp; Only you and Atlas Move, LLC can see these messages.
             </div>
+            <div class="refresh_messaeg" onclick="refreshMessages()">
+                <i class="fas fa-refresh"></i>
+            </div>
             <div class="messaegs_container" id="messagesBox">
                 <!-- Example messages -->
             </div>
@@ -201,33 +204,40 @@
                         <div class="s_5 c_5">
                             <div>
                                 <p>Pick Up Address</p>
-                                <input type="text" name="location" placeholder="City, State, or ZIP Code">
+                                <input type="text" name="location" placeholder="City, State, or ZIP Code"
+                                    id="pickupAddress">
                             </div>
+                        </div>
+                        <div class="s_5 c_5">
                             <div>
                                 <p>Pick Up Date</p>
                                 <input type="text" id="pickupDate" name="pickupDate" placeholder="Pick Up Date"
                                     required>
                             </div>
                         </div>
-                        <div class="ind">
+                        <div class="s_5 c_5">
                             <div>
-                                <p>Select Radius</p>
-                                <select name="radius" class="radio_5">
-                                    <option value="50">50 miles</option>
-                                    <option value="100" selected>100 miles</option>
-                                    <option value="200">200 miles</option>
-                                    <option value="300">300 miles</option>
-                                    <option value="400">400 miles</option>
-                                </select>
+                            <p>Select Radius</p>
+                            <select name="radius" class="radio_5">
+                                <option value="50">50 miles</option>
+                                <option value="100" selected>100 miles</option>
+                                <option value="200">200 miles</option>
+                                <option value="300">300 miles</option>
+                                <option value="400">400 miles</option>
+                            </select>
                             </div>
                         </div>
                         <div class="ind">
-                            <div class=""></div>
-                        <button type="submit">
-                            <img src="./magnifying-glass-solid.svg" class="seach_bar_5" width="20px" alt="">
-                        </button>
+                            <button type="button" class="zipbutton" onclick="getMyZipCode()">📍 Get My ZIP
+                                Code</button>
+                            <button type="submit">
+                                <img src="./magnifying-glass-solid.svg" class="seach_bar_5" width="20px" alt="">
+                            </button>
                         </div>
                     </form>
+                </div>
+                <div class="refresh_loads" onclick="refreshLoads()">
+                    <i class="fas fa-refresh"></i> &nbsp; Refresh Status of Loads
                 </div>
             </div>
 

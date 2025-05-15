@@ -53,9 +53,6 @@
     text-align: left;
     font-weight: 550;
     font-size: 14px;
-    position: relative;
-    bottom: -13px;
-    left: 20px;
     color: #676869;
     padding: 0 !important;
     margin: 0 !important;
@@ -63,26 +60,26 @@
 
 .s_5 div input,
 .s_5 div select {
-    width: 80%;
+    width: 90%;
+    text-align: left;
+    margin-left: auto;
 }
 
 .search-bar_5 {
     padding: 10px;
-    margin: auto;
-    text-align: center;
+    width: 90%;
+    text-align: left;
+    margin-left: auto;
     border-bottom: 1px solid #f1f1f2;
 }
 
 .search-bar_5 form {
-    display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .s_5 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-bottom: 20px;
 }
 
 .search-bar_5 input,
@@ -113,14 +110,8 @@ select {
     position: relative;
     top: 10px;
 }
-
-.radio_5 {
-    min-width: 140px;
-    width: 80%;
-}
-
 .s_5 div {
-    width: 80%;
+    width: 90%;
     margin: auto;
 }
 
@@ -402,7 +393,40 @@ html {
     font-weight: 600;
     padding: 12px !important;
 }
-
+.refresh_messaeg {
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: #95b8b4;
+    text-align: right;
+}
+.refresh_loads {
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: #95a2b8;
+    text-align: left;
+}
+.refresh_loads:hover{
+    background-color: #4e86e5;
+}
+.ind {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+.zipbutton {
+    width: 60%;
+    border: 1px solid #dee2e3 !important;
+    background-color: #e9eeef !important;
+    color: #323536;
+    font-size: 14px;
+    font-weight: 800;
+}
+.radio_5 {
+    min-width: 100% !important;
+}
 .message {
     max-width: 70%;
     padding: 10px 14px;

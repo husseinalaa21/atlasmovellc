@@ -538,3 +538,27 @@ html {
     margin-bottom: 10px;
     border-radius: 10px;
 }
+
+.load-details_3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: #fdfdfd;
+    padding-top: 8px;
+    border-top: 1px solid #eeeeeead;
+    width: 98%;
+    margin: auto;
+}
+
+.load-details_4 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: #fdfdfd;
+    padding-top: 8px;
+    width: 98%;
+    margin: auto;
+    margin-top: 10px;
+}

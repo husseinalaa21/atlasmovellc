@@ -1870,8 +1870,16 @@ img.seach_bar {
     font-optical-sizing: auto;
     font-style: normal;
     margin-bottom: 40px;
+    margin-top: 40px;
 }
 
+.note_login {
+    background-color: #007bff3b;
+    padding: 20px;
+    margin-bottom: 40px;
+    font-size: 16px;
+    line-height: 1.6rem;
+}
 .login-title_011 {
     text-align: center;
     margin-bottom: 1.5rem;
@@ -2228,4 +2236,38 @@ img.seach_bar {
 .apply_top_head {
     width: 80%;
     margin: auto;
+}
+
+
+.pro_login {
+    /* Use 100vh for full viewport height */
+    background: url('./inside-min.jpg') no-repeat center center;
+    background-size: cover;
+    /* ... rest of your CSS ... */
+    color: #ffffff;
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    flex: 0 0 100%;
+    position: relative;
+    text-align: center;
+}
+
+/* Optional: dark overlay for better text contrast */
+.pro_login::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.59);
+    /* semi-transparent black overlay */
+    z-index: 0;
+}
+
+/* Ensure child elements appear above the overlay */
+.pro_login_x {
+    position: relative;
+    z-index: 1;
 }

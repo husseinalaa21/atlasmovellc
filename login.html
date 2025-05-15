@@ -46,15 +46,16 @@
 
 <body id="smart">
     <!-- BACKGROUND -->
-    <div class="pro_6">
-        <div class="pro_6_x">
-            <div class="header header_">
+    <div class="pro_login">
+        <div class="pro_login_x">
+            <div class="header">
                 <div class="logo" onclick="logomain()">
                     <img src="./logo.png" alt="Main Logo" width="62px">
                 </div>
                 <div class="tools">
+                    <div class="login_but" onclick="register()"> Register </div>
                     <div onclick="menu_togg()">
-                        <img src="./bars-solid.svg" class="bar_inside" alt="Menu" width="23px">
+                        <img src="./bars-solid.svg" class="bar_top" alt="Menu" width="23px">
                     </div>
                 </div>
             </div>
@@ -138,7 +139,9 @@
                 <div class="front">
                     <!-- Section A -->
                     <div class="a">
-                        <div class="informations">
+                        <div class="informations apply_top_head">
+                            <h3>ATLAS'S HOME</h3>
+                            <h2 id="yourname_09"> Driver Login </h2>
                         </div>
                     </div>
                 </div>
@@ -148,7 +151,7 @@
     <!-- TOP DONE -->
 
     <div class="login-container_011">
-        <h2 class="login-title_011">Atlas Move Driver Login</h2>
+        <div class="note_login"> Please enter the your username and your passwords below. </div>
         <form id="loginForm_011">
             <label for="text" class="login-label_011">Username</label>
             <input type="text" id="username" name="username" class="login-input_011" placeholder="Your Username"

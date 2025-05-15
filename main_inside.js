@@ -251,8 +251,9 @@ function renderLoads(loadBatch) {
         const weight = load.details?.weight || "N/A";
         const pieces = load.details?.pieces || "N/A";
         const size = load.details?.size || "N/A";
-        const price = load.price || 0;
-        const priceFormatted = load.price ? `$${load.price}` : "Price not listed";
+        const priceValue = parseFloat(load.price);
+        const price = isNaN(priceValue) ? 0 : priceValue;
+        const priceFormatted = isNaN(priceValue) ? "Price not listed" : `$${price}`;
         const load_id = `${load.pickup.zip_code}_${load.dropoff.zip_code}`;
         const loadedMiles = load.loaded_miles || 0;
 
@@ -441,8 +442,10 @@ function renderLoads(loadBatch) {
                 <div class="loaded-miles_2">${miles} miles</div>
                 <div class="delivery_2"><strong>${deliveryLoc}</strong><br>${dropOffDate}</div>
             </div>
-            <div class="load-details_2">
+            <div class="load-details_3">
                 <div>${weight}, ${pieces} pieces | ${size}<br>${priceFormatted}</div>
+            </div>
+            <div class="load-details_4">
                 <div><strong>Your Bid:</strong> $${total} (${pricePerMile}$/mile)</div>
             </div>
         `;

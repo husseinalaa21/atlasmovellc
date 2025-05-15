@@ -25,6 +25,9 @@ function openlogin() {
 function logomain() {
     window.open('/', '_self');
 }
+function register() {
+    window.open('/apply.html', '_self');
+}
 document.addEventListener('DOMContentLoaded', function () {
     /*
     setTimeout(() => {

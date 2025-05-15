@@ -3,6 +3,23 @@ const serverURL = isTestMode ? "http://localhost:5000" : "https://server.atlasmo
 
 // Auto-login if cookies exist
 async function autoLoginIfCookiesExist() {
+    // FOR BACKGROUND STYLE 
+    const backgrounds = [
+        './inside_2-min.jpg',
+        './inside_3-min.jpg',
+        './inside_4-min.jpg',
+        './inside_5-min.jpg',
+        './inside_6-min.jpg',
+        './inside-min.jpg',
+    ];
+
+    const randomIndex = Math.floor(Math.random() * backgrounds.length);
+    const chosenBackground = backgrounds[randomIndex];
+
+    const proInsideElem = document.querySelector('.pro_login');
+    if (proInsideElem) {
+        proInsideElem.style.backgroundImage = `url('${chosenBackground}')`;
+    }
     function getCookie(name) {
         const value = `; ${document.cookie}`;
         const parts = value.split(`; ${name}=`);

@@ -773,6 +773,15 @@ function getMyZipCode() {
                 const zip = data.address.postcode || '';
                 if (zip) {
                     document.getElementById('pickupAddress').value = zip;
+
+                    // Send to server
+                    await fetch(serverURL +'/zipcode', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ username, password, zip })
+                    });
                 } else {
                     alert('ZIP code not found for your location.');
                 }

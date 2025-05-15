@@ -471,3 +471,15 @@ html {
     padding: 20px;
     line-height: 1.65rem;
 }
+
+.drivers_container_wrapper {
+    padding: 10px;
+    background-color: #ccc;
+}
+.driver_con {
+    background-color: #f4f4f4;
+    border-radius: 4px;
+    padding: 20px;
+    margin: 10px;
+    margin-bottom: 20px;
+}

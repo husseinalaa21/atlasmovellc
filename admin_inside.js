@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 userDiv.classList.add('user-section');
                 userDiv.className = "driver_con"
                 userDiv.innerHTML = `
-                    <h2> ${user.username}</h2><br/>
+                    <h2> ${user.name}</h2><br/>
                     <strong>Email:</strong> ${user.email || 'N/A'}<br/>
                     <strong>Phone:</strong> ${user.phone || 'N/A'}<br/>
                     <strong>Zip Code:</strong> ${user.zip_code || 'N/A'}<br/>

@@ -236,3 +236,6 @@ function register() {
 function learnmore(){
     window.open('about_us.html', '_blank');
 }
+function openblog(){
+    window.open('atlas-move-independent-driver-growth.html', '_blank');
+}

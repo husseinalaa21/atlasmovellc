@@ -41,6 +41,14 @@
     <priority>0.80</priority>
   </url>
 
+  <!-- Blog Page -->
+  <url>
+    <loc>https://www.atlasmovellc.com/atlas-move-independent-driver-growth.html</loc>
+    <lastmod>2025-05-10</lastmod>
+    <changefreq>daily</changefreq> <!-- Login page may change frequently due to new features or updates -->
+    <priority>0.90</priority> <!-- Higher priority for login page -->
+  </url>
+
   <!-- Driver Login Page -->
   <url>
     <loc>https://www.atlasmovellc.com/login.html</loc>

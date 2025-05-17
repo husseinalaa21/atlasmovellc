@@ -2277,7 +2277,7 @@ img.seach_bar {
 
 .atlas-blog-container {
     max-width: 800px;
-    margin: 40px auto;
+    margin: 0 auto;
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
@@ -2290,6 +2290,8 @@ img.seach_bar {
     padding: 20px;
     background-color: #bdc2c82c;
     font-size: 20px;
+    margin: 20px;
+    border-left: 10px solid #007BFF;
 }
 
 .atlas-blog-image {
@@ -2302,20 +2304,25 @@ img.seach_bar {
 .atlas-blog-container p {
     margin-bottom: 16px;
     font-size: 18px;
+    padding: 0 20px;
+    margin: 20px;
 }
 
 .atlas-blog-container ul {
     margin-bottom: 16px;
-    padding-left: 20px;
     font-size: 17px;
+    padding: 5px 20px 10px 20px;
     width: 90%;
     margin: auto;
 }
 
 .atlas-blog-container li {
     margin-bottom: 8px;
+    margin-left: 40px;
 }
-
+.atlas-blog-container li::marker {
+    color: #0066cc;
+}
 .atlas-blog-container a {
     color: #0066cc;
     text-decoration: none;

@@ -193,9 +193,66 @@
         <div class="new_load_title">
             <div><i class="fas fa-envelope"></i> &nbsp; New Load Box ▼</div>
         </div>
+<div class="new_load_container_wrapper">
+  <form id="loadForm">
+    <h3>Pickup Info</h3>
+    <label for="pickup_city">City:</label>
+    <input type="text" id="pickup_city" name="pickup_city" required /><br/>
 
-        <div class="new_load_container_wrapper" style="display: none;">
-        </div>
+    <label for="pickup_state">State:</label>
+    <input type="text" id="pickup_state" name="pickup_state" required maxlength="2" /><br/>
+
+    <label for="pickup_zip">Zip Code:</label>
+    <input type="number" id="pickup_zip" name="pickup_zip" required /><br/>
+
+    <h3>Dropoff Info</h3>
+    <label for="dropoff_city">City:</label>
+    <input type="text" id="dropoff_city" name="dropoff_city" required /><br/>
+
+    <label for="dropoff_state">State:</label>
+    <input type="text" id="dropoff_state" name="dropoff_state" required maxlength="2" /><br/>
+
+    <label for="dropoff_zip">Zip Code:</label>
+    <input type="number" id="dropoff_zip" name="dropoff_zip" required /><br/>
+
+    <h3>Load Details</h3>
+    <!-- Loaded miles input REMOVED -->
+
+    <label for="pickup_date">Pickup Date:</label>
+    <input type="date" id="pickup_date" name="pickup_date" required /><br/>
+
+    <label for="pickup_time">Pickup Time:</label>
+    <input type="time" id="pickup_time" name="pickup_time" /><br/>
+
+    <label for="dropoff_date">Dropoff Date:</label>
+    <input type="date" id="dropoff_date" name="dropoff_date" required /><br/>
+
+    <label for="dropoff_time">Dropoff Time:</label>
+    <input type="time" id="dropoff_time" name="dropoff_time" /><br/>
+
+    <label for="price">Price:</label>
+    <input type="text" id="price" name="price" /><br/>
+
+    <h3>Load Details (Dimensions)</h3>
+    <label for="distance">Distance:</label>
+    <input type="text" id="distance" name="distance" required /><br/>
+
+    <label for="weight">Weight:</label>
+    <input type="text" id="weight" name="weight" required /><br/>
+
+    <label for="pieces">Pieces:</label>
+    <input type="number" id="pieces" name="pieces" required /><br/>
+
+    <label for="size">Size (LxWxH):</label>
+    <input type="text" id="size" name="size" required /><br/>
+
+    <button type="submit">Review Load</button>
+  </form>
+
+  <div id="review_load" style="margin-top: 20px; border: 1px solid #ccc; padding: 15px; display:none;">
+    <!-- Load review details will appear here -->
+  </div>
+</div>
     </div>
 
     <!-- END -->

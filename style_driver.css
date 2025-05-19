@@ -470,14 +470,20 @@ html {
 .driver_con {
     background-color: #f4f4f4;
     border-radius: 4px;
-    padding: 20px;
+    padding: 10px;
     margin: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    border-radius: 6px;
 }
 
 .driver_con h2{
-    font-size: 23px;
+    font-size: 21px;
     text-align: center;
+    cursor: pointer;
+}
+
+.username_con {
+    padding: 20px;
 }
 
 .admin_action {
@@ -529,3 +535,4 @@ html {
     margin: auto;
     margin-top: 10px;
 }
+

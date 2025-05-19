@@ -10,7 +10,167 @@ function getCookie(name) {
 const username = getCookie('username');
 const password = getCookie('password');
 
+function openMain(id) {
+    const el = document.getElementById(id);
+    if (!el) {
+        return;
+    }
+    if (el.style.display === "none" || el.style.display === "") {
+        el.style.display = "block";
+    } else {
+        el.style.display = "none";
+    }
 
+    // Update the URL param 'child' with the current id
+    const url = new URL(window.location);
+    url.searchParams.set('child', id);
+    window.history.replaceState(null, '', url.toString());
+};
+
+let locations = [];
+let currentPayload = null;
+
+async function loadLocations() {
+    try {
+        const response = await fetch('locations_.json');
+        if (!response.ok) throw new Error('Failed to load locations_.json');
+        locations = await response.json();
+    } catch (error) {
+        alert('Error loading locations data: ' + error.message);
+    }
+}
+
+loadLocations();
+
+function haversineDistance(lat1, lon1, lat2, lon2) {
+    function toRad(x) {
+        return x * Math.PI / 180;
+    }
+    const R = 3958.8; // Earth radius in miles
+    const dLat = toRad(lat2 - lat1);
+    const dLon = toRad(lon2 - lon1);
+
+    const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) *
+        Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return R * c;
+}
+
+document.getElementById('loadForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    if (locations.length === 0) {
+        alert('Locations data not loaded yet. Please wait.');
+        return;
+    }
+
+    const pickupZip = parseInt(document.getElementById("pickup_zip").value);
+    const dropoffZip = parseInt(document.getElementById("dropoff_zip").value);
+
+    const pickupLocation = locations.find(loc => loc.zip_code === pickupZip);
+    const dropoffLocation = locations.find(loc => loc.zip_code === dropoffZip);
+
+    if (!pickupLocation) {
+        alert("Pickup zip code not found in locations data.");
+        return;
+    }
+    if (!dropoffLocation) {
+        alert("Dropoff zip code not found in locations data.");
+        return;
+    }
+
+    // Calculate loaded miles automatically
+    const loadedMiles = Math.round(haversineDistance(
+        pickupLocation.latitude, pickupLocation.longitude,
+        dropoffLocation.latitude, dropoffLocation.longitude
+    ));
+
+    const pickupTimeInput = document.getElementById("pickup_time").value;
+    const dropoffTimeInput = document.getElementById("dropoff_time").value;
+
+    const pickupTime = pickupTimeInput ? pickupTimeInput : "ASAP";
+    const dropoffTime = dropoffTimeInput ? dropoffTimeInput : "Direct";
+
+    currentPayload = {
+        pickup: {
+            city: document.getElementById("pickup_city").value,
+            state: document.getElementById("pickup_state").value.toUpperCase(),
+            zip_code: pickupZip,
+            lat: pickupLocation.latitude,
+            lng: pickupLocation.longitude
+        },
+        dropoff: {
+            city: document.getElementById("dropoff_city").value,
+            state: document.getElementById("dropoff_state").value.toUpperCase(),
+            zip_code: dropoffZip,
+            lat: dropoffLocation.latitude,
+            lng: dropoffLocation.longitude
+        },
+        loaded_miles: loadedMiles,
+        pickup_date: {
+            date: document.getElementById("pickup_date").value,
+            time: pickupTime
+        },
+        drop_off_date: {
+            date: document.getElementById("dropoff_date").value,
+            time: dropoffTime
+        },
+        price: document.getElementById("price").value || "N/A",
+        details: {
+            distance: document.getElementById("distance").value,
+            weight: document.getElementById("weight").value,
+            pieces: parseInt(document.getElementById("pieces").value),
+            size: document.getElementById("size").value
+        }
+    };
+
+    const reviewDiv = document.getElementById('review_load');
+    reviewDiv.style.display = 'block';
+    reviewDiv.innerHTML = `
+    <h3>Review Load Details</h3>
+    <p><strong>Pickup:</strong> ${currentPayload.pickup.city}, ${currentPayload.pickup.state} ${currentPayload.pickup.zip_code} (Lat: ${currentPayload.pickup.lat}, Lng: ${currentPayload.pickup.lng})</p>
+    <p><strong>Dropoff:</strong> ${currentPayload.dropoff.city}, ${currentPayload.dropoff.state} ${currentPayload.dropoff.zip_code} (Lat: ${currentPayload.dropoff.lat}, Lng: ${currentPayload.dropoff.lng})</p>
+    <p><strong>Loaded Miles (calculated):</strong> ${loadedMiles} miles</p>
+    <p><strong>Pickup Date & Time:</strong> ${currentPayload.pickup_date.date} ${currentPayload.pickup_date.time}</p>
+    <p><strong>Dropoff Date & Time:</strong> ${currentPayload.drop_off_date.date} ${currentPayload.drop_off_date.time}</p>
+    <p><strong>Price:</strong> ${currentPayload.price}</p>
+    <p><strong>Distance:</strong> ${currentPayload.details.distance}</p>
+    <p><strong>Weight:</strong> ${currentPayload.details.weight}</p>
+    <p><strong>Pieces:</strong> ${currentPayload.details.pieces}</p>
+    <p><strong>Size:</strong> ${currentPayload.details.size}</p>
+    <button id="confirmBtn" onclick="confirmLoad()">Confirm</button>
+  `;
+});
+
+async function confirmLoad() {
+    if (!currentPayload) {
+        alert('No load data to submit.');
+        return;
+    }
+
+    try {
+        const response = await fetch(`${serverURL}/new_load`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                username: username,
+                password: password,
+                newLoad: currentPayload
+            })
+        });
+        if (response.ok) {
+            alert('Load submitted successfully!');
+            document.getElementById('loadForm').reset();
+            document.getElementById('review_load').style.display = 'none';
+            currentPayload = null;
+        } else {
+            alert('Failed to submit load. Server responded with ' + response.status);
+        }
+    } catch (error) {
+        alert('Error submitting load: ' + error.message);
+    }
+}
 
 document.addEventListener("DOMContentLoaded", async function () {
     // FOR BACKGROUND STYLE 
@@ -67,7 +227,9 @@ document.addEventListener("DOMContentLoaded", async function () {
                 userDiv.classList.add('user-section');
                 userDiv.className = "driver_con"
                 userDiv.innerHTML = `
-                    <h2> ${user.name}</h2><br/>
+                    <h2 onclick="openMain('${user.username + "_main"}')" > ${user.name}</h2><br/>
+                    <div id="${user.username + "_main"}" style="display:none;">
+                    <div class="username_con">
                     <strong>Email:</strong> ${user.email || 'N/A'}<br/>
                     <strong>Phone:</strong> ${user.phone || 'N/A'}<br/>
                     <strong>Zip Code:</strong> ${user.zip_code || 'N/A'}<br/>
@@ -100,7 +262,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             <div class="admin_action">
 <div
   id="${user.username + "_" + userbidid + "_pen"}"
-  style="background: ${bid.pending ? 'green': '#ccc' };"
+  style="background: ${bid.pending ? 'green' : '#ccc'};"
   onclick='thisUserBidPending({ userid: "${user.username}", userbid_id: "${userbidid}" })'
 >
   Pending
@@ -108,7 +270,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 <div
   id="${user.username + "_" + userbidid + "_con"}"
-  style="background: ${bid.got ? 'green': '#ccc' };"
+  style="background: ${bid.got ? 'green' : '#ccc'};"
   onclick='thisUserBidConfirm({ userid: "${user.username}", userbid_id: "${userbidid}" })'
 >
   Confirm
@@ -116,25 +278,24 @@ document.addEventListener("DOMContentLoaded", async function () {
 
             </div>
         </div>
-        <div id="${user.username+"_m_"+userbidid}"></div>
+        <div id="${user.username + "_m_" + userbidid}"></div>
       `;
                         }).join('')
                         : '<i>No loads found</i><br/><hr/>'}
 
 <br/>
                     <strong>Messages:</strong><br/>
-                   <strong>Messages:</strong><br/>
 ${Array.isArray(user.messages) && user.messages.length > 0
-  ? user.messages.map(msg => {
-      const messageText = typeof msg === 'object' ? (msg.message || msg.text || JSON.stringify(msg)) : msg;
-      const messageDate = msg.createdAt || msg.date;
-      return `
+                        ? user.messages.map(msg => {
+                            const messageText = typeof msg === 'object' ? (msg.message || msg.text || JSON.stringify(msg)) : msg;
+                            const messageDate = msg.createdAt || msg.date;
+                            return `
         <div class="message-entry">
             ${messageDate ? new Date(messageDate).toLocaleString() : 'N/A'} - ${messageText}<br/>
         </div>
       `;
-    }).join('')
-  : '<i>No messages</i><br/>'}
+                        }).join('')
+                        : '<i>No messages</i><br/>'}
 <hr/>
 
 <!-- Message input section -->
@@ -142,11 +303,26 @@ ${Array.isArray(user.messages) && user.messages.length > 0
   <input type="text" id="message_input_${user.username}" placeholder="Write a message..." style="width: 70%;" />
   <button onclick="sendMessageToUser('${user.username}')" style="padding: 5px 10px;">Send</button>
 </div>
-
 <br/><hr/>
+</div>
+</div>
                 `;
                 usersList.appendChild(userDiv);
+
             });
+        }
+
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const childId = urlParams.get('child');
+        if (childId) {
+            const el = document.getElementById(childId);
+            if (el) {
+                el.style.display = "block";
+                console.log(`Displayed element with id=${childId} from URL param`);
+            } else {
+                console.log(`No element found with id=${childId}`);
+            }
         }
 
     } catch (err) {
@@ -157,6 +333,7 @@ ${Array.isArray(user.messages) && user.messages.length > 0
         window.location.href = '/admin_login.html';
     }
 });
+
 
 async function sendMessageToUser(username) {
     const inputId = `message_input_${username}`;
@@ -203,7 +380,7 @@ async function thisUserBidPending({ userid, userbid_id }) {
     const username = getCookie('username');
     const password = getCookie('password');
     if (!username || !password) {
-        document.getElementById(userid + "_m_" + userbid_id).innerText ='Not authenticated.';
+        document.getElementById(userid + "_m_" + userbid_id).innerText = 'Not authenticated.';
         return;
     }
 
@@ -225,8 +402,8 @@ async function thisUserBidPending({ userid, userbid_id }) {
             document.getElementById(userid + "_m_" + userbid_id).innerText = `Failed to update pending status: ${result.error || 'Unknown error'}`;
         }
     } catch (error) {
-        document.getElementById(userid + "_m_" + userbid_id).innerText = 'Error toggling pending:'+ error;
-        document.getElementById(userid + "_m_" + userbid_id).innerText ='Network error toggling pending status.';
+        document.getElementById(userid + "_m_" + userbid_id).innerText = 'Error toggling pending:' + error;
+        document.getElementById(userid + "_m_" + userbid_id).innerText = 'Network error toggling pending status.';
     }
 }
 
@@ -234,7 +411,7 @@ async function thisUserBidConfirm({ userid, userbid_id }) {
     const username = getCookie('username');
     const password = getCookie('password');
     if (!username || !password) {
-        document.getElementById(userid + "_m_" + userbid_id).innerText ='Not authenticated.';
+        document.getElementById(userid + "_m_" + userbid_id).innerText = 'Not authenticated.';
         return;
     }
 
@@ -256,7 +433,17 @@ async function thisUserBidConfirm({ userid, userbid_id }) {
             document.getElementById(userid + "_m_" + userbid_id).innerText = `Failed to update confirm status: ${result.error || 'Unknown error'}`;
         }
     } catch (error) {
-        document.getElementById(userid + "_m_" + userbid_id).innerText = 'Error toggling confirm:'+ error;
-        document.getElementById(userid + "_m_" + userbid_id).innerText ='Network error toggling confirm status.';
+        document.getElementById(userid + "_m_" + userbid_id).innerText = 'Error toggling confirm:' + error;
+        document.getElementById(userid + "_m_" + userbid_id).innerText = 'Network error toggling confirm status.';
     }
+}
+
+
+function logout() {
+    // Delete the cookies by setting max-age to 0
+    document.cookie = 'username=; path=/; max-age=0';
+    document.cookie = 'password=; path=/; max-age=0';
+
+    // Redirect to login page
+    window.location.href = '/login.html';
 }

@@ -2320,9 +2320,11 @@ img.seach_bar {
     margin-bottom: 8px;
     margin-left: 40px;
 }
+
 .atlas-blog-container li::marker {
     color: #0066cc;
 }
+
 .atlas-blog-container a {
     color: #0066cc;
     text-decoration: none;
@@ -2368,6 +2370,61 @@ img.seach_bar {
 }
 
 
-.pro_blog1 a{
+.pro_blog1 a {
     color: #007BFF;
+}
+
+
+.privacy-modal {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 320px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 9999;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.privacy-content h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.privacy-content p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.privacy-content a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.privacy-content a:hover {
+    text-decoration: underline;
+}
+
+.privacy-content button {
+    padding: 10px 16px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.privacy-content button:hover {
+    background-color: #0056b3;
+}
+
+.privacy-modal.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
 }

@@ -27,8 +27,33 @@ function logomain() {
 }
 function register() {
     window.open('/apply.html', '_self');
+}// Helper: Set cookie with expiration (defaults to 365 days)
+
+function setCookie(name, value, days = 365) {
+    const date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    const expires = "expires=" + date.toUTCString();
+    document.cookie = `${name}=${value};${expires};path=/;SameSite=Lax`;
+    console.log('Cookie set:', document.cookie); // Debugging line
+}
+
+function getCookie(name) {
+    // ... existing code ...
+    console.log('Cookie lookup for', name, 'found:', result); // Debugging line
+    return result;
+}
+
+function acceptPrivacy() {
+    console.log('Accept button clicked'); // Debugging line
+    setCookie("privacyAccepted", "true");
+    document.getElementById("privacyModal").classList.add("hidden");
 }
 document.addEventListener('DOMContentLoaded', function () {
+    getCookie("privacyAccepted")
+    // Show modal only if cookie not set
+    if (getCookie("privacyAccepted")) {
+        document.getElementById("privacyModal").classList.remove("hidden");
+    }
     /*
     setTimeout(() => {
         const offerBanner = document.getElementById('offerBanner');

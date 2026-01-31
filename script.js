@@ -1,4 +1,4 @@
-/*var show_time = false
+var show_time = false
 var sideMenu = document.getElementById("sideMenu")
 var smart = document.getElementById("smart")
 var offerBanner = document.getElementById("offerBanner")
@@ -28,7 +28,7 @@ function logomain() {
 function register() {
     window.open('/apply.html', '_self');
 }// Helper: Set cookie with expiration (defaults to 365 days)
-
+/*
 function setCookie(name, value, days = 365) {
     const date = new Date();
     date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));

@@ -1,4 +1,4 @@
-var show_time = false
+/*var show_time = false
 var sideMenu = document.getElementById("sideMenu")
 var smart = document.getElementById("smart")
 var offerBanner = document.getElementById("offerBanner")
@@ -177,5 +177,5 @@ document.addEventListener('DOMContentLoaded', function () {
             offerBanner.style.display = 'none';
         });
 
-    }, 10000);*/
-});
+    }, 10000);
+});*/
